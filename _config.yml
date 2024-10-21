@@ -1,4 +1,4 @@
-title: Stack Problems
+title: ssssssssssssssssssssssssssssssss
 description: My Personal Stack Problems
 author: Agus Makmun
 github: https://github.com/amintaheri23
@@ -24,25 +24,25 @@ social:
     - icon: fa-stack-exchange
       link: "#"
     - icon: fa-github
-      link: "https://github.com/agusmakmun"
+      link: "https://github.com/amintaheri23"
 
 share:
-  twitter_username: github.io
+  twitter_username: amintaheri23.github.io
   fb_appid: 1749788565247320
 
 urls:
     - text: About Me
-      url: /about/
+      url: /blog/about/
     - text: My Projects
-      url: /projects/
+      url: /blog/projects/
     - text: XML Feed
-      url: /feed.xml
+      url: /blog/feed.xml
 
 url: "https://amintaheri23.github.io/blog"
 baseurl: "/blog"
 paginate: 20
 per_page: 20
-paginate_path: "/page/:num/"
+paginate_path: "/blog/page/:num/"
 markdown: kramdown
 plugins:
   - jekyll-paginate
