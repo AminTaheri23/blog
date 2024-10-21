@@ -2,10 +2,10 @@
 layout: post
 title:  "Hello world!"
 date:   2024-10-21 08:38:00 -2:30
-categories: [other]
+categories: [others]
 ---
 
-# Hello World!
+Well this a begining.
 <!-- 
 ### Background
 
