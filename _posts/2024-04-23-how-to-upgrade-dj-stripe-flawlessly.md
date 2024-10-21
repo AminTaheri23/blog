@@ -4,7 +4,7 @@ title:  "How to upgrade dj-stripe flawlessly?"
 date:   2024-04-23 10:15:00 +0700
 categories: [python, django]
 ---
-
+<!-- 
 ### Background
 
 In this article, we will share how to upgrade the dj-stripe package flawlessly and carefully.
@@ -80,4 +80,5 @@ stripe>=4.0.0,<5.0.0  # https://github.com/dj-stripe/dj-stripe/issues/1842#issue
 
 ### Alternatives
 
-- https://stackoverflow.com/a/31122841
+- https://stackoverflow.com/a/31122841 -->
+# lorem ipsum
