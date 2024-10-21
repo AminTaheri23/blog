@@ -1,6 +1,6 @@
 body {
   font-family: "Roboto Condensed", sans-serif;;
-  background: url("/static/img/dark_dotted2.png");
+  background: url("/blog/static/img/dark_dotted2.png");
   line-height: 1.5em;
   font-weight: 300;
   font-size: 17px;
@@ -40,7 +40,7 @@ a:hover {
 
 /* Layout */
 .main-layout {
-    background: url("/static/img/dark_dotted2.png");
+    background: url("/blog/static/img/dark_dotted2.png");
 }
 .sidebar-nav {
   margin: 0;
