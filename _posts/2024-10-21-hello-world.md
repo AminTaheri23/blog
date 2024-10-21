@@ -1,9 +1,11 @@
 ---
 layout: post
-title:  "How to upgrade dj-stripe flawlessly?"
-date:   2024-04-23 10:15:00 +0700
-categories: [python, django]
+title:  "Hello world!"
+date:   2024-10-21 08:38:00 -2:30
+categories: [other]
 ---
+
+# Hello World!
 <!-- 
 ### Background
 
@@ -81,4 +83,4 @@ stripe>=4.0.0,<5.0.0  # https://github.com/dj-stripe/dj-stripe/issues/1842#issue
 ### Alternatives
 
 - https://stackoverflow.com/a/31122841 -->
-# lorem ipsum
+

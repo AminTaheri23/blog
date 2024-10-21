@@ -1,10 +1,10 @@
-title: ssssssssssssssssssssssssssssssss
-description: My Personal Stack Problems
-author: Agus Makmun
+title: Hallucinations of a programmer mind
+description: My Personal blogs about everything
+author: Amin Taheri
 github: https://github.com/amintaheri23
-about: I'm Programmer
-disqus_shortname: nothing
-google_analytics: UA-XXXXXXXX-Y
+about: I'm thinker
+disqus_shortname: amin_taheri
+google_analytics: UA-174954679-1
 
 enableTags: true
 tagarray: []
@@ -16,13 +16,13 @@ collections:
 
 social:
     - icon: fa-facebook
-      link: "#"
+      link: "https://www.facebook.com/amin.taheri.982/"
     - icon: fa-twitter
-      link: "#"
+      link: "https://twitter.com/sed_amin"
     - icon: fa-linkedin
-      link: "#"
+      link: "https://www.linkedin.com/in/sed-amin-taheri"
     - icon: fa-stack-exchange
-      link: "#"
+      link: "https://stackoverflow.com/users/8495032/amin-taheri"
     - icon: fa-github
       link: "https://github.com/amintaheri23"
 
