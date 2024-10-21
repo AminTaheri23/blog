@@ -4,7 +4,7 @@ body {
   line-height: 1.5em;
   font-weight: 300;
   font-size: 16px;
-  color: #666;
+  color: #494949;
 }
 hr {
   margin-top: 20px;
@@ -20,7 +20,7 @@ span.time, span.categories {
   text-transform: uppercase;
 }
 h1, h2, h3 {
-  color: #696969;
+  color: #ffffff;
   font-weight: normal;
 }
 h1 {
@@ -32,16 +32,16 @@ h2, h3 {
 }
 a, a:link, a:active {
   text-decoration: none;
-  color: #3fa757;
+  color: #f4a585;
 }
 a:hover {
-  color: #B3B3B3;
+  color: #fa3333;
   text-decoration: underline;
 }
 
 /* Layout */
 .main-layout {
-  background: #fff;
+  background: #000000;
 }
 .sidebar-nav {
   margin: 0;
@@ -60,7 +60,7 @@ a:hover {
 div.content pre {
   background: #333333;
   padding: 10px;
-  color: #FFF;
+  color: #414141;
   overflow-x: auto;
   font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
   font-size: 12px;
@@ -68,13 +68,13 @@ div.content pre {
 }
 
 footer {
-  border-top: 1px solid #F7F1F1;
+  border-top: 1px solid #303030;
   width: 100%;
   height: 10px;
   margin-top: 10px;
   margin-bottom: 3em;
   padding-top: 10px;
-  color: #C2C2C2;
+  color: #4f4f4f;
   font-size: 11px;
   bottom: 0;
   padding-bottom: 10px;
@@ -143,8 +143,8 @@ div.col-sm-3 div.profile-about {
 
 .share-page {
   padding: 10px 10px 5px;
-  border-top: 1px solid #f0f0f0;
-  border-bottom: 1px solid #f0f0f0;
+  border-top: 1px solid #282828;
+  border-bottom: 1px solid #2e2e2e;
 }
 .post-content img,
 .content img {
