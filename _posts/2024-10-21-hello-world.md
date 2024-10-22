@@ -5,7 +5,8 @@ date:   2024-10-21 08:38:00 -2:30
 categories: [others]
 ---
 
-Well this a begining.
+# This is a new beginning. 
+
 <!-- 
 ### Background
 
