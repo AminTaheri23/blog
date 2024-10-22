@@ -13,7 +13,7 @@ layout: default
       {% if c_slug == page.categories %}
         <button class="btn btn-sm btn-default active btn-tags">{{ c_slug }}</button>
       {% else %}
-        <a href="/category/{{ c_slug }}" class="btn btn-sm btn-default btn-tags">{{ c_slug }}</a>
+        <a href="/blog/category/{{ c_slug }}" class="btn btn-sm btn-default btn-tags">{{ c_slug }}</a>
       {% endif %}
     {% endfor %}
   {% endfor %}
@@ -37,7 +37,7 @@ layout: default
         {% endif %}
       {% endif %}
         <ul class="posts">
-          <li><a href="\blog\{{ post.url }}">{{ post.title }}</a> &raquo; <i><span>{{ post.date | date_to_string }}</span></i></li>
+          <li><a href="/blog/{{ post.url }}">{{ post.title }}</a> &raquo; <i><span>{{ post.date | date_to_string }}</span></i></li>
         </ul>
       {% if forloop.last %}
         </div>
