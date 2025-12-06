@@ -5,11 +5,6 @@ date: 2025-12-06 20:08:02 -0230       # (require) a post date
 categories: [blindtyping]          # (custom) some categories, but makesure these categories already exists inside path of `category/`
 tags: [blindtyping]                      # (custom) tags only for meta `property="article:tag"`            # (custom) image only for meta `property="og:image"`, save your image inside path of `static/img/_posts`
 ---
-Got it — thanks for clarifying. I’ll update that section so it reflects your intended meaning (paying others to solve problems, rather than being paid). I’ll also add a heading for the *Cosmos* paragraph about watching it with your son. Here’s the revised version:
-
----
-
-# When My Thoughts Outran My Hands
 
 I wanted to try something tonight: type without looking at the screen and see what comes out. I didn’t use backspace. I simply spoke with my fingers and trusted the process. What followed was less about the result and more about what I discovered along the way.
 
