@@ -3,8 +3,7 @@ layout: post                          # (require) default post layout
 title: "Deep learning compilers, open medical llms and time-series finance transformers"                   # (require) a string title
 date: 2025-11-08 12:52:02 -0230       # (require) a post date
 categories: [ai, python]          # (custom) some categories, but makesure these categories already exists inside path of `category/`
-tags: [ai]                      # (custom) tags only for meta `property="article:tag"`
-image: Broadcast_Mail.png             # (custom) image only for meta `property="og:image"`, save your image inside path of `static/img/_posts`
+tags: [ai]                      # (custom) tags only for meta `property="article:tag"`            # (custom) image only for meta `property="og:image"`, save your image inside path of `static/img/_posts`
 ---
 In deep learning compilers, key developments include the rise of **agentic AI** and **context engineering**, enabling AI systems to autonomously perform complex tasks and reliably execute workflows by carefully preparing structured background information. **MLIR (Multi-Level Intermediate Representation)** is gaining traction as a flexible framework for optimizing AI models across diverse hardware. Additionally, there's a focus on **smaller, more efficient AI models** (e.g., Claude Haiku 4.5) and **specialized compilers like NVIDIA TensorRT** for high-performance inference. Major companies involved include Google, NVIDIA, Meta, and Anthropic. The impact is increased AI efficiency, broader hardware compatibility, and accelerated deployment of AI applications, driving innovation across industries.
 HealthResearcher > ## Daily Executive Briefing: Tech, Health, and Finance
