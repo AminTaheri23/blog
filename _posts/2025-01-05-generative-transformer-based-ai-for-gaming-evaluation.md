@@ -2,7 +2,7 @@
 layout: post
 title:  "Evaluation of Generative Transformer-Based AI for Gaming"
 date:   2025-01-05 16:38:00 -2:30
-categories: [idea]
+categories: [idea,ai]
 ---
 
 # Evaluation of Generative Transformer-Based AI for Gaming
