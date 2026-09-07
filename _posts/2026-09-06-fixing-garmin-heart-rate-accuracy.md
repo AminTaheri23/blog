@@ -42,8 +42,6 @@ For the first three issues, the channel pointed me toward the actual solution: w
 
 The remaining problem was that I didn't have a strap made for the bicep. So I improvised: I took a hair tie from my wife, looped it through the holes in the watch band (I don't know the technical name for them), and made a simple extender. That extender lets me wear the watch on my bicep, and when I don't need it there, I just tie it around the back of the band.
 
-![Woman running with an armband](https://images.unsplash.com/photo-1480179087180-d9f0ec044897?fm=jpg&q=60&w=1600&auto=format&fit=crop)
-
 It made my heart rate readings dramatically more accurate. I might even send the chest strap back — a problem I paid 120 CAD to solve might have actually been fixable with a $3 hair tie. (For the record, they don't come in single packs, and mine happens to be black.)
 
 ## The Downsides
@@ -58,5 +56,9 @@ I couldn't think of any more downsides. I actually expected the hair tie extende
 ## Wrapping Up
 
 I wanted to share this in case it saves someone else a couple of months of frustration and a chest strap they might not need. If you're getting suspicious heart rate numbers from your wrist-based wearable, try moving it up to your bicep before you spend money on anything else.
+
+Here's the actual hair tie extender, in all its improvised glory:
+
+![The hair tie extender looped through the watch band holes](/blog/static/img/_posts/garmin-hair-tie-extender.jpeg)
 
 Cheers, and happy running.
