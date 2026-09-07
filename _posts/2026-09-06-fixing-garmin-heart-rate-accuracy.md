@@ -10,7 +10,7 @@ tags: [running, fitness, garmin, heart-rate, wearables]                      # (
 
 A while back I had an epiphany to start running every day. That's a story for another post — it's out of scope here. What matters for this one is what came after: my smartwatch started recording my stats, and that's how I got into tracking my runs with a bit more precision.
 
-![Close-up of a smartwatch on a wrist](https://images.unsplash.com/photo-1777496410128-926b2d0083f9?fm=jpg&q=60&w=1600&auto=format&fit=crop)
+![My Garmin Instinct 2S on my wrist](/blog/static/img/_posts/garmin-instinct-2s-wrist.jpeg)
 
 I was training my aerobic system and wanted to keep my heart rate in different zones depending on the day — zone 2 days, threshold days, HIIT days, and so on. The problem was my watch, a Garmin Instinct 2S I've had for three years, has some real flaws when it comes to measuring heart rate accurately.
 
