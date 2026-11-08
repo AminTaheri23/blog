@@ -18,4 +18,8 @@
   --font-outlier: "Geist Mono", ui-monospace, monospace;
   --radius-card: 0; --radius-pill: 0; --rule-hair: 1px; --shadow-card: none;
   --tracking-display: -0.04em; --display-weight: 500;
+  /* Blog reading tokens (amintaheri23.github.io/blog): the long-reading body, the prose measure, and the code colours drawn from the Rim roles. */
+  --text-read: 1.0625rem; --leading-read: 1.65; --measure: 58ch;
+  --code-ink: var(--color-ink-2); --code-comment: var(--color-muted); --code-keyword: var(--color-accent); --code-constant: var(--color-accent-2);
+  --code-string: var(--color-success); --code-entity: var(--color-ink); --code-error: var(--color-error);
 }

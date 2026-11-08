@@ -138,6 +138,19 @@
     d.addEventListener('click', function (e) { if (!form.contains(e.target)) close(); });
   }
 
+  /* ---------- Wide tables and code blocks: a box that scrolls sideways takes keyboard focus ---------- */
+  var scrollers = d.querySelectorAll('.prose table, .prose pre');
+  if (scrollers.length) {
+    var markScrollers = function () {
+      scrollers.forEach(function (el) {
+        if (el.scrollWidth > el.clientWidth + 1) el.setAttribute('tabindex', '0');
+        else el.removeAttribute('tabindex');
+      });
+    };
+    markScrollers();
+    window.addEventListener('resize', markScrollers);
+  }
+
   /* ---------- Disqus: load embed.js only when #comments nears the viewport or on request ---------- */
   var comments = d.getElementById('comments');
   if (comments && d.getElementById('disqus_thread')) {

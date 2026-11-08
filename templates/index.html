@@ -1,17 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
 <section class="home" aria-labelledby="home-heading">
+  <header class="home__head">
   <h1 id="home-heading" class="home__title">{{ config.title }}/blog</h1>
+  </header>
   {%- set posts = paginator.pages if paginator is defined else section.pages %}
   <ol class="post-list">
   {%- for p in posts %}
-    <li class="post-list__item"><a class="post-list__link" href="{{ p.permalink }}">{{ p.title }}</a> » <time class="post-list__date" datetime="{{ p.date }}">{{ p.date | date(format="%d %b %Y", timezone="UTC") }}</time></li>
+    <li class="post-list__item"><a class="post-list__link" href="{{ p.permalink }}">{{ p.title }}</a> <span class="post-list__meta">» <time class="post-list__date" datetime="{{ p.date }}">{{ p.date | date(format="%d %b %Y", timezone="UTC") }}</time></span></li>
   {%- endfor %}
   </ol>
   {%- if paginator is defined and paginator.number_pagers > 1 %}
   <nav class="pager" aria-label="Pages">
-    {%- if paginator.previous %}<a class="pager__link pager__link--prev" href="{{ paginator.previous }}" rel="prev">« Newer posts</a>{% endif %}
-    {%- if paginator.next %}<a class="pager__link pager__link--next" href="{{ paginator.next }}" rel="next">Older posts »</a>{% endif %}
+    {%- if paginator.previous %}<p class="pager__item pager__item--prev"><span class="pager__mark" aria-hidden="true">«</span> <a class="pager__link pager__link--prev" href="{{ paginator.previous }}" rel="prev">Newer posts</a></p>{% endif %}
+    {%- if paginator.next %}<p class="pager__item pager__item--next"><a class="pager__link pager__link--next" href="{{ paginator.next }}" rel="next">Older posts</a> <span class="pager__mark" aria-hidden="true">»</span></p>{% endif %}
   </nav>
   {%- endif %}
 </section>

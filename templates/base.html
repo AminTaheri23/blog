@@ -61,11 +61,18 @@
   <link rel="preconnect" href="https://api.fontshare.com">
   <link rel="preconnect" href="https://cdn.fontshare.com" crossorigin>
   <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=switzer@400,500&display=swap">
-  <link rel="stylesheet" href="{{ get_url(path='css/tokens.css') }}">
-  <link rel="stylesheet" href="{{ get_url(path='css/base.css') }}">
-  <link rel="stylesheet" href="{{ get_url(path='css/site.css') }}">
-  <link rel="stylesheet" href="{{ get_url(path='giallo.css') }}">
-  <link rel="stylesheet" href="{{ get_url(path='css/blog.css') }}">
+  {#- Stylesheets by relative path (one "../" per path segment), so the built folder is self-contained
+      for local checks and the Hallmark linter; the 404 page can be served at any depth, so it keeps absolute URLs. #}
+  {%- set here_path = current_path if current_path is defined else "" %}
+  {%- if here_path == "" or (here_path | split(pat=".html") | length) > 1 %}
+  {%- set css_base = config.base_url ~ "/css/" %}
+  {%- else %}
+  {%- set css_base = ["../" for s in here_path | split(pat="/") if s] | join(sep="") ~ "css/" %}
+  {%- endif %}
+  <link rel="stylesheet" href="{{ css_base }}tokens.css">
+  <link rel="stylesheet" href="{{ css_base }}base.css">
+  <link rel="stylesheet" href="{{ css_base }}site.css">
+  <link rel="stylesheet" href="{{ css_base }}blog.css">
   {% block head_extra %}{% endblock head_extra %}
 </head>
 <body>

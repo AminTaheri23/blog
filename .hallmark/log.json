@@ -1,0 +1,35 @@
+[
+ {
+  "mode": "redesign",
+  "depth": "restyle",
+  "scope": "site",
+  "shape": "Long Document (kept)",
+  "theme": "rim",
+  "axes": "dark/grotesk-sans/warm",
+  "hero": "Banner (/, /category/*, /posts/*), kept",
+  "nav": "edge-aligned, shared with amintaheri23.github.io",
+  "footer": "social row over the colophon line",
+  "imagery": "the owner photographs and post images in true colour, each framed",
+  "photos": [],
+  "entry": "Banner",
+  "fingerprint": "rim/long-document/banner/edge-aligned/colophon",
+  "sections": [
+   "Masthead (the blog title)",
+   "Post index (numbered ruled rows)",
+   "Post (title with meta in the rail, reading column)",
+   "Related posts",
+   "Pager",
+   "Comments",
+   "Footer (social row, colophon)"
+  ],
+  "signature": "the blog own title set as a masthead over a ruled, numbered index of every post",
+  "waived": [
+   "49b"
+  ],
+  "prompt": "personal blog of an ML and bioinformatics researcher: essays and notes on AI, learning and running",
+  "genre": "editorial",
+  "copy": "verbatim",
+  "note": "restyled from the Jekyll dark theme onto the main site locked Rim system; reading rail at desktop, 58ch prose at 17px, code coloured from Rim tokens, pager one line per link",
+  "date": "2026-11-08"
+ }
+]

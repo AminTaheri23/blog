@@ -1,2 +1,215 @@
-/* blog.css: reading layout, post list, prose, code theme, tables, related, pager, comments, search.
-   Placeholder: owned by design (D). Code spans use giallo classes (pre.giallo, span.z-N) from /blog/giallo.css. */
+/* blog.css: the blog's own layout on the shared Rim system (tokens.css, base.css, site.css).
+   The reading column, the post index, the archive by year, prose, code, tables, related posts,
+   the pager, comments and the nav search. Every colour and face is a token. */
+
+/* ---------- Page frame ---------- */
+main { display: block; padding-bottom: var(--space-2xl); }
+/* The rail: at desktop widths a quarter of the container holds the post meta and the archive years,
+   and the reading column starts where the old site's content column did. */
+:root { --rail: calc((100% + var(--gap-columns)) / 4); }
+
+/* ---------- Nav search ---------- */
+.nav__links { margin-left: auto; }
+.search { position: relative; display: flex; align-items: center; gap: var(--space-xs); margin: 0; padding-block: var(--space-xs); }
+.search__label { font-size: var(--text-sm); font-weight: 500; color: var(--color-muted); white-space: nowrap; }
+.search__input {
+  appearance: none; -webkit-appearance: none;
+  width: 12rem; min-width: 0; height: 44px; margin: 0; padding: 0 var(--space-sm);
+  border: var(--rule-hair) solid var(--color-muted); border-radius: var(--radius-pill);
+  background: var(--color-paper); color: var(--color-ink); caret-color: var(--color-accent);
+  font: 400 var(--text-md)/1 var(--font-body);
+  transition: border-color var(--dur-short) var(--ease-out), background-color var(--dur-short) var(--ease-out);
+}
+.search__input::-webkit-search-decoration { -webkit-appearance: none; }
+.search__input:hover { border-color: var(--color-ink-2); }
+.search__input:focus { background: var(--color-paper-2); }
+.search__input:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.search__input:active { background: var(--color-paper-2); }
+.search__input:disabled { opacity: 0.55; cursor: not-allowed; }
+.search__submit { flex-shrink: 0; }
+.search__results {
+  position: absolute; top: 100%; right: 0; z-index: var(--z-dropdown);
+  width: max(100%, 24rem); max-width: calc(100vw - 2 * var(--gutter)); max-height: min(28rem, 70svh); overflow-y: auto;
+  margin: 0; padding: 0; list-style: none;
+  background: var(--color-paper-2); border: var(--rule-hair) solid var(--color-rule);
+}
+.search__results [role="option"] + [role="option"] { border-top: var(--rule-hair) solid var(--color-rule-2); }
+.search__results a { display: block; padding: var(--space-sm) var(--space-md); color: var(--color-ink); text-decoration: none; line-height: 1.35; overflow-wrap: break-word; }
+.search__results a:hover { background: var(--color-paper-3); color: var(--color-ink); text-decoration: underline; text-decoration-color: var(--color-muted-2); }
+.search__results a:focus-visible { outline: 2px solid var(--color-focus); outline-offset: -2px; }
+.search__results .is-active, .search__results [aria-selected="true"] { background: var(--color-accent-soft); outline: var(--rule-hair) solid var(--color-accent); outline-offset: -1px; }
+.search__results .is-active a { color: var(--color-ink); }
+@media (prefers-reduced-motion: reduce) { .search__input { transition: none; } }
+@media (max-width: 60rem) {
+  .nav__links { margin-left: 0; }
+  .search { flex-basis: 100%; min-width: 0; padding-block: 0 var(--space-sm); }
+  .search__label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+  .search__input { flex: 1 1 0; width: 0; }
+  .search__results { left: 0; width: auto; max-width: none; }
+}
+
+/* ---------- Mastheads (home, category pages) ---------- */
+.home, .term, .categories { padding-top: var(--space-3xl); }
+.home__title { max-width: 16ch; font-size: var(--text-display); letter-spacing: var(--tracking-display); line-height: 1.02; }
+.term > h1, .categories > h1 { max-width: 24ch; font-size: var(--text-section); }
+.term > .chips, .categories > .chips { margin-top: var(--space-xl); }
+
+/* ---------- The post index (home and archive): numbered, ruled rows ---------- */
+.post-list { margin: var(--space-2xl) 0 0; padding: 0 0 0 var(--space-xl); border-top: var(--rule-hair) solid var(--color-rule); color: var(--color-muted); font-size: var(--text-lg); line-height: 1.4; }
+.post-list__item { padding-block: var(--space-sm); padding-left: var(--space-2xs); border-bottom: var(--rule-hair) solid var(--color-rule-2); overflow-wrap: break-word; }
+.post-list__item::marker { color: var(--color-muted); font-size: var(--text-sm); font-variant-numeric: tabular-nums; }
+.post-list__link { font-weight: 500; color: var(--color-ink); text-decoration: none; }
+.post-list__link:hover { color: var(--color-accent); text-decoration: underline; text-decoration-color: currentColor; }
+.post-list__meta { white-space: nowrap; }
+.post-list__date { font-size: var(--text-sm); font-variant-numeric: tabular-nums; color: var(--color-muted); white-space: nowrap; }
+.post-list__year { margin-top: var(--space-2xl); font-size: var(--text-2xl); }
+.post-list__year + .post-list { margin-top: var(--space-md); }
+.term > p { margin-top: var(--space-2xl); color: var(--color-muted); }
+.chip__count { color: var(--color-muted); font-variant-numeric: tabular-nums; }
+
+/* ---------- Posts and pages: the head, then the reading column ---------- */
+.post, .page { padding-top: var(--space-3xl); }
+.post__head { padding-bottom: var(--space-xl); border-bottom: var(--rule-hair) solid var(--color-rule); }
+.post__title, .page__title { max-width: 24ch; font-size: var(--text-section); }
+.post__meta { margin-top: var(--space-md); font-size: var(--text-sm); line-height: 1.5; color: var(--color-muted); }
+.post__meta time { color: var(--color-ink-2); font-variant-numeric: tabular-nums; }
+.post__cats a { color: var(--color-ink-2); }
+.post__cats a:hover { color: var(--color-accent); }
+.post .prose, .page .prose { margin-top: var(--space-xl); }
+.page__title + .prose { padding-top: var(--space-xl); border-top: var(--rule-hair) solid var(--color-rule); }
+
+/* ---------- Prose ---------- */
+.prose { max-width: var(--measure); min-width: 0; font-size: var(--text-read); line-height: var(--leading-read); color: var(--color-ink-2); overflow-wrap: break-word; }
+.prose > * { margin-block: 0; }
+.prose > * + * { margin-top: var(--space-md); }
+.prose p { max-width: none; }
+.prose strong, .prose b { font-weight: 500; color: var(--color-ink); }
+.prose a { color: var(--color-ink); text-decoration: underline; text-decoration-color: var(--color-muted-2); overflow-wrap: anywhere; }
+.prose a:hover { color: var(--color-accent); text-decoration-color: currentColor; }
+
+/* Heads inside a post: sizes from the scale, twice the space above as below. */
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 { max-width: none; color: var(--color-ink); font-family: var(--font-display); font-weight: var(--display-weight); text-wrap: balance; }
+.prose > h1, .prose > h2 { margin-top: var(--space-2xl); }
+.prose > h3, .prose > h4, .prose > h5, .prose > h6 { margin-top: var(--space-xl); }
+.prose > :is(h1, h2, h3, h4, h5, h6) + * { margin-top: var(--space-sm); }
+.prose > :first-child { margin-top: 0; }
+.prose h1 { font-size: var(--text-3xl); line-height: 1.08; letter-spacing: -0.03em; }
+.prose h2 { font-size: var(--text-2xl); line-height: 1.12; letter-spacing: -0.02em; }
+.prose h3 { font-size: var(--text-xl); line-height: 1.2; letter-spacing: -0.015em; }
+.prose h4 { font-size: var(--text-lg); line-height: 1.3; letter-spacing: -0.01em; }
+.prose h5, .prose h6 { font-size: var(--text-md); line-height: 1.4; letter-spacing: 0; }
+.prose h3 code, .prose h2 code, .prose h1 code { font-size: 0.85em; }
+
+/* Lists */
+.prose ul, .prose ol { padding-left: var(--space-lg); }
+.prose li + li, .prose li > ul, .prose li > ol { margin-top: var(--space-xs); }
+.prose li > p + p, .prose li > p + pre, .prose li > p + ul, .prose li > p + ol { margin-top: var(--space-xs); }
+.prose li > p { margin: 0; }
+.prose li::marker { color: var(--color-muted); }
+
+/* Quotes and rules */
+.prose blockquote { margin-inline: 0; padding: var(--space-2xs) 0 var(--space-2xs) var(--space-lg); border-left: var(--rule-hair) solid var(--color-muted-2); color: var(--color-ink); }
+.prose blockquote > * + * { margin-top: var(--space-sm); }
+.prose hr { height: 0; margin-block: var(--space-2xl); border: 0; border-top: var(--rule-hair) solid var(--color-rule); }
+
+/* Inline code and code blocks: Geist Mono when it is there, the system mono otherwise; mono only for code. */
+.prose code, .prose kbd, .prose samp { font-family: var(--font-outlier); font-size: 0.875em; font-variant-ligatures: none; }
+.prose :not(pre) > code { padding: 0 var(--space-2xs); background: var(--color-paper-2); outline: var(--rule-hair) solid var(--color-rule); outline-offset: -1px; color: var(--color-ink); overflow-wrap: anywhere; }
+.prose pre {
+  max-width: 100%; margin-inline: 0; padding: var(--space-md);
+  overflow-x: auto; overscroll-behavior-x: contain;
+  background: var(--color-paper-3); color: var(--code-ink);
+  outline: var(--rule-hair) solid var(--color-rule); outline-offset: -1px;
+  font-family: var(--font-outlier); font-size: var(--text-md); line-height: 1.55; tab-size: 4;
+  scrollbar-color: var(--color-muted-2) var(--color-paper-3);
+}
+.prose pre:focus-visible, .prose table:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.prose pre code { display: block; width: max-content; min-width: 100%; padding: 0; background: none; outline: 0; font-size: inherit; color: inherit; white-space: pre; overflow-wrap: normal; }
+
+/* Code colours (giallo classes, from Zola's github-dark class map), all from the Rim roles. */
+.giallo-l { display: inline-block; min-height: 1lh; width: 100%; }
+.giallo-ln { display: inline-block; min-width: 3ch; margin-right: var(--space-sm); color: var(--color-muted-2); text-align: right; user-select: none; }
+.z-code { color: var(--code-ink); }
+.z-hl { background: var(--color-paper-2); }
+.z-3 { color: var(--code-comment); }
+.z-10 { color: var(--code-keyword); }
+.z-4 { color: var(--code-constant); }
+.z-6, .z-9 { color: var(--code-string); }
+.z-5 { color: var(--code-string); }
+.z-7 { color: var(--code-entity); }
+.z-1, .z-2, .z-8, .z-12 { color: var(--code-ink); }
+.z-11 { color: var(--code-error); }
+.z-b { font-weight: 500; }
+.z-i { font-style: italic; }
+.z-u { text-decoration: underline; }
+.z-s { text-decoration: line-through; }
+
+/* Tables: a block that scrolls inside its own box; cells may wrap, so a phone rarely needs to scroll. */
+.prose table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; font-size: var(--text-sm); line-height: 1.45; font-variant-numeric: tabular-nums; scrollbar-color: var(--color-muted-2) var(--color-paper); }
+.prose th, .prose td { padding: var(--space-xs) var(--space-sm); text-align: left; vertical-align: top; overflow-wrap: break-word; hyphens: auto; min-width: 9ch; }
+.prose th:first-child, .prose td:first-child { padding-left: 0; }
+.prose th { font-weight: 500; color: var(--color-muted); border-bottom: var(--rule-hair) solid var(--color-rule); }
+.prose td { color: var(--color-ink-2); border-bottom: var(--rule-hair) solid var(--color-rule-2); }
+
+/* Pictures: true colour, each in the .frame recipe (paper-3 ground, 1px rule edge). */
+.prose img { display: block; max-width: 100%; height: auto; background: var(--color-paper-3); outline: var(--rule-hair) solid var(--color-rule); outline-offset: -1px; border-radius: var(--radius-card); }
+.prose p:has(> img:only-child) { margin-block: var(--space-xl); }
+.prose figure { margin-block: var(--space-xl); }
+
+/* Footnotes */
+.prose .footnotes, .prose .footnote-definition { margin-top: var(--space-2xl); padding-top: var(--space-md); border-top: var(--rule-hair) solid var(--color-rule); font-size: var(--text-sm); color: var(--color-muted); }
+.prose .footnote-reference a, .prose sup a { text-decoration: none; }
+
+/* ---------- After the post: related, pager, comments ---------- */
+.related, .pager, .comments { max-width: var(--measure); }
+.related { margin-top: var(--section-gap-s); padding-top: var(--space-xl); border-top: var(--rule-hair) solid var(--color-rule); }
+.related h2, .comments h2 { font-size: var(--text-2xl); }
+.related__list { margin: var(--space-md) 0 0; padding: 0; list-style: none; }
+.related__item { padding-block: var(--space-sm); border-bottom: var(--rule-hair) solid var(--color-rule-2); line-height: 1.45; overflow-wrap: break-word; }
+.related__item > a { font-weight: 500; color: var(--color-ink); text-decoration: none; }
+.related__item > a:hover { color: var(--color-accent); text-decoration: underline; }
+.related__cats { font-size: var(--text-sm); color: var(--color-muted); }
+.related__cats a { color: var(--color-ink-2); }
+
+.pager { display: grid; gap: var(--space-xs); margin-top: var(--space-2xl); padding-block: var(--space-md); border-block: var(--rule-hair) solid var(--color-rule); }
+.pager__item { display: flex; align-items: center; gap: var(--space-xs); margin: 0; min-width: 0; }
+.pager__item--next { justify-content: flex-end; }
+.pager__mark { flex-shrink: 0; color: var(--color-muted); }
+/* One line each: a long title ends in an ellipsis rather than wrapping (49a); the full title is in the link's title attribute. */
+.pager__link { display: block; min-width: 0; padding-block: var(--space-sm); overflow: hidden; white-space: nowrap; text-overflow: ellipsis; font-weight: 500; line-height: 1.25; color: var(--color-ink); text-decoration: none; }
+.pager__link:hover { color: var(--color-accent); text-decoration: underline; }
+
+.comments { margin-top: var(--space-2xl); }
+.comments > * + * { margin-top: var(--space-md); }
+.comments noscript p, .comments > p { color: var(--color-muted); }
+#disqus_thread:empty { display: none; }
+
+/* ---------- The rail at desktop widths ---------- */
+@media (min-width: 64rem) {
+  .post, .page { display: grid; grid-template-columns: minmax(0, calc(var(--rail) - var(--gap-columns))) minmax(0, 1fr); column-gap: var(--gap-columns); align-items: end; }
+  .post__head { display: contents; }
+  .post__title, .page__title { grid-column: 2; grid-row: 1; }
+  .post__meta { grid-column: 1; grid-row: 1; margin: 0; padding-bottom: var(--space-2xs); }
+  .post .prose, .page .prose { grid-column: 2; grid-row: 2; align-self: start; }
+  /* The head's rule runs under the title and the meta, as one line across both columns. */
+  .post__title, .page__title { padding-bottom: var(--space-xl); }
+  .post .prose, .page .prose { margin-top: 0; padding-top: var(--space-xl); border-top: var(--rule-hair) solid var(--color-rule); }
+  .post__meta { align-self: end; padding-bottom: calc(var(--space-xl) + var(--space-2xs)); }
+  .related, .pager, .comments { margin-left: var(--rail); }
+  .term { display: grid; grid-template-columns: minmax(0, calc(var(--rail) - var(--gap-columns))) minmax(0, 1fr); column-gap: var(--gap-columns); align-items: start; }
+  .term > h1, .term > .chips, .term > p { grid-column: 1 / -1; }
+  .term > .post-list__year { grid-column: 1; margin-top: var(--space-2xl); padding-top: var(--space-sm); border-top: var(--rule-hair) solid var(--color-rule); }
+  .term > .post-list { grid-column: 2; margin-top: var(--space-2xl); }
+}
+
+/* ---------- Footer: the social row over the colophon line ---------- */
+.footer .social { margin-left: calc(var(--space-sm) * -1); }
+.footer__sign { margin: var(--space-md) 0 0; max-width: none; font-size: var(--text-sm); line-height: 1.5; color: var(--color-muted); }
+.footer__sign a { color: var(--color-ink-2); overflow-wrap: anywhere; }
+
+/* ---------- Phones ---------- */
+@media (max-width: 40rem) {
+  .home, .term, .categories, .post, .page { padding-top: var(--space-2xl); }
+  .post-list { padding-left: var(--space-lg); font-size: var(--text-md); }
+  .prose { font-size: var(--text-md); }
+}

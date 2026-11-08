@@ -26,9 +26,10 @@ smart_punctuation = true
 bottom_footnotes = true
 
 [markdown.highlighting]
-# Class-based output: spans get class="z-N", Zola writes the stylesheet to public/giallo.css
+# Class-based output: spans get class="z-N". The github-dark theme only sets the class map;
+# the colours come from the Rim tokens in static/css/blog.css (public/giallo.css is not linked).
 style = "class"
-theme = "github-light"
+theme = "github-dark"
 
 [search]
 index_format = "fuse_json"

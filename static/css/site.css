@@ -1,39 +1,47 @@
-/* Hallmark · shape: Marquee Hero, from draw 674e0a · draw: 674e0a · genre: modern-minimal · theme: Rim (by request) · redesign: full · copy: verbatim
- * hero: Stage (/), Banner (/gallery/, /certificates/) · nav: edge-aligned · footer: letter close · imagery: the owner's photographs, project screenshots and certificates in true colour · signature: the name at marquee scale beside the colour portrait · rim: night
+/* Hallmark · shape: Long Document (kept) · genre: editorial · theme: Rim (by request) · redesign: restyle · copy: verbatim
+ * hero: Banner (/, /category/*, /posts/*), kept · nav: edge-aligned, shared with amintaheri23.github.io · footer: social row over the colophon line · imagery: the owner's photographs and the post images in true colour, each in a frame · signature: the blog's own title set as a masthead over a ruled, numbered index of every post · rim: night
  * axes: dark/grotesk-sans/warm · posture: committed · contrast: pass · fold: pass · v2.0.0 */
-/* Hallmark · pre-emit critique: P4 H4 E4 S4 R5 V4 · weakest: S, the two archive pages are a filter bar over an image grid that any portfolio could carry; kept them the owner's by setting his organisation glossary as a column beside the grid, his photos and certificates in true colour, and left the composition plain rather than adding material the site never had */
-/* Hallmark · note photo · natural, untreated: the owner asked for his photographs in full colour, so Rim's sat=-20 con=10 treatment is not applied */
-/* Hallmark · reworded "Netilfy" to "Netlify" · spelling fix in the MediSightAI tech stack (plan C2) */
-/* Hallmark · reworded "Predincting wheter a customer leave bussiness or not" to "Predicting whether a customer leave business or not" · spelling fix in the churn project description, grammar kept */
-/* Hallmark · reworded "Stramlit" to "Streamlit" · spelling fix in the diabetes webapp tech stack */
-/* Hallmark · reworded "IEEE Xtream 2016" to "IEEE Xtreme 2016", "IEEE Xtream" to "IEEE Xtreme", "IEEE Xtream is a 24 hour competition" to "IEEE Xtreme is a 24 hour competition" · the contest name, fixed in four photo titles and one photo description */
-/* Hallmark · reworded "Look at the shinny MVP" to "Look at the shiny MVP" · spelling fix in a Rahhat photo description */
-/* Hallmark · reworded "Did you saw those cute I and Es?" to "Did you see those cute I and Es?" · tense fix in an IEEE photo description */
-/* Hallmark · reworded "Azad University Centeral Tehran Branch" to "Azad University Central Tehran Branch" · spelling fix in both glossaries */
-/* Hallmark · reworded "Are interested in my work?" to "Are you interested in my work?" · missing word in the contact paragraph, fixed at the owner's request */
-/* Hallmark · reworded "Natural Language Processing and Computer vision" to "Natural Language Processing and Computer Vision" · capitalisation in the biography, at the owner's request */
-/* Hallmark · reworded "Python, Tensorflow, Keras" to "Python, TensorFlow, Keras", "Python - Tensorflow - Keras" to "Python - TensorFlow - Keras" · the library's official name, in the hero and two project tech stacks */
-/* Hallmark · reworded "Select a Category" to "Select a category" · one sentence-case filter label on every page, at the owner's request */
-/* Hallmark · reworded "DL_C4 _small.jpg" to "DL_C4%20_small.jpg", "DL_C5 _small.jpg" to "DL_C5%20_small.jpg", "certificate_8 _small.jpg" to "certificate_8%20_small.jpg" · the same certificate files, their spaces now URL-encoded in the img src */
-/* Hallmark · dropped the link emoji icon on project cards · Floor 11 bans an emoji as an icon; the screenshot itself is the link */
-/* Hallmark · dropped the category-key hover overlay Cv/Nlp/Strucdata/Etc · replaced by the human category labels listed on every project card */
-/* Hallmark · dropped _includes/services.html · the include was never rendered on any page of the old site */
-/* Hallmark · dropped /BacTermFinder.html · removed at the owner's request; it was never linked from any page */
-/* Hallmark · dropped img/header.jpg hero background · removed at the owner's request; the Stage hero leads with the portrait */
-/* Hallmark · dropped /index.html, /gallery.html, /cert_gal.html · relinked to the Zola routes /, /gallery/ and /certificates/; the old .html URLs stay as redirect pages that keep the hash */
-/* Hallmark · relinked gallery.html to /gallery/ · Zola alias page, JS location.replace keeping the hash plus a noscript meta refresh */
-/* Hallmark · relinked cert_gal.html to /certificates/ · Zola alias page, JS location.replace keeping the hash plus a noscript meta refresh */
-/* Hallmark · relinked index.html to / · in-site Back and brand links now point at the Zola home route */
-/* Hallmark · relinked projects.html to /#projects · static page with a meta refresh, a canonical link and a plain link */
-/* Hallmark · waive 8 · kept sequence Hero, Biography, Projects, Contact in a new composition · the hero's More link targets the Biography directly under it, so the owner's order stays */
-/* Hallmark · waive 44c · Banner posture on /gallery/ and /certificates/ · the archive pages open on a compact head so the chips, glossary and first photos sit above the fold */
-/* Hallmark · waive 59 · a dense archive separated by hairline rules and the sticky chip bar · the Banner head, chip bar and grid read as one unit; a 120px gap would push the photos below the fold */
-/* Hallmark · waive 83 · a gallery of the owner's own photographs and certificates · these two pages are the photo and certificate archives the old site had, and nothing else belongs on them */
-/* Hallmark · dismissed 77 · four sections is the owner's own home (Hero, Biography, Projects, Contact) and each one has mass: the marquee portrait, the panel of research and education, the twelve-cell project index, the full-width contact close */
-/* Hallmark · note 58 · copy: verbatim; the Projects index is a dense index of the owner's own twelve projects, and the gallery captions are his own photo titles */
+/* Hallmark · pre-emit critique: P4 H5 E4 S3 R5 V3 · weakest: S, a blog index and a reading column could belong to any writer; kept it the owner's by setting his own odd title as the masthead, numbering his posts as the old site did and keeping his » meta lines, and V is low on purpose: the blog shares the main site's locked Rim system */
+/* Hallmark · note photo · natural, untreated: the owner's photographs show in true colour in a frame, so Rim's sat=-20 con=10 treatment is not applied */
+/* Hallmark · note spelling · the posts were checked for spelling and none needed fixing, so no post text changed */
+/* Hallmark · reworded "Powered by Jekyll." to "Powered by Zola." · the footer names the new generator */
+/* Hallmark · dropped the share buttons, _includes/share-page.html, twitter.com/share, fb-root · the Tweet row under every post is gone with the old theme */
+/* Hallmark · dropped Super Search, super-search.js, super-search.css, js-search, tag-filter · replaced by the nav search (#search-input) over Zola's search index; the RSS sitemap.xml it read is relinked below */
+/* Hallmark · dropped jQuery 1.11, /jquery/1.11.0/jquery.min.js, jquery-migrate-1.2.1.min.js · site.js is plain JavaScript with no dependencies */
+/* Hallmark · dropped Bootstrap 3, bootstrap.min.js, bootstrap.min.css · the layout is tokens.css, base.css, site.css and blog.css */
+/* Hallmark · dropped Thickbox, thickbox-compressed.js, thickbox.css, loadingAnimation.gif, macFFBgHack.png · no post opens an image in a lightbox */
+/* Hallmark · dropped Font Awesome 4 (css, map and fonts) · the five social icons are inline SVG from Font Awesome Free 6.7.2 */
+/* Hallmark · dropped compress_html · minify_html is off, so the HTML ships as written */
+/* Hallmark · dropped the GitHub star and fork iframes · the footer links the GitHub profile in its own line */
+/* Hallmark · dropped Google Fonts Roboto Condensed and the local Roboto files · Switzer from Fontshare is the one face, as on the main site */
+/* Hallmark · dropped main.css, syntax.css, projects.css, fonts.css, projects.js, dark_dotted2.png, subtle_dots.png · the old theme's sheets, script and dotted backgrounds */
+/* Hallmark · dropped the Projects page, projects, /blog/projects/ · the nav link is gone at the owner's request; /blog/projects/ itself redirects to the main site's #projects */
+/* Hallmark · dropped CLAUDE.html, CLAUDE.md, README.md, LICENSE, assets/css/style.css, blog project notes, blog-project-notes, post conventions, post-conventions, writing style, writing-style, images, git · repo files the legacy Pages builder published by accident, with their headings */
+/* Hallmark · relinked each old post URL /blog/<categories>/<y>/<m>/<d>/<slug>.html to /blog/posts/<slug>/ · Zola alias page: location.replace keeping the hash, a noscript refresh and a canonical link */
+/* Hallmark · relinked /blog/blog/<…>.html to the same canonical post · the old feed's broken links and GUIDs now land on the post */
+/* Hallmark · relinked /blog/sitemap.xml from the RSS clone to Zola's real sitemap */
+/* Hallmark · relinked prev, next, related and home post links to the canonical permalinks · the old ones pointed at the domain root, /blog/blog//… and \blog\/… */
+/* Hallmark · relinked the 21 /blog/category/<name>.html to /blog/category/<name>/ · the 11 empty ones (bash, codefights, django, jekyll, nginx, raspberry, ruby, security, server, ssl, ubuntu) go to /blog/category/ */
+/* Hallmark · relinked /blog/projects/ to https://amintaheri23.github.io/#projects · static redirect page */
+/* Hallmark · dropped /2024/, /2025/, /2026/, /, /blog, /blog/about/, /blog/feed.xml, /blog/category/ · not dropped but relinked as listed above: every old post, home, About, feed and category link now uses its absolute Zola URL (get_url), so the old relative strings are gone while each target still resolves */
+/* Hallmark · dropped articles by category:, 2024, 2025, 2026, $3 · the old category pages at /category/<name>.html are redirect pages now; the same heads and year heads live on /category/<name>/ */
+/* Hallmark · dropped googletagmanager.com/gtag/js · only on the old post addresses, which are redirect pages now; the post each one forwards to loads the same Google tag */
+/* Hallmark · dropped amin taheri, home · the old sidebar's name heading and #home anchor; the name is now the nav brand, linking the main site */
+/* Hallmark · note category · category other (the ESG post) and page others stay apart as written, not merged */
+/* Hallmark · note dates and the pain post · post dates show in UTC as the old site printed them; the pain post, never published by Jekyll (the file lacked .md), is now published */
+/* Hallmark · note 63 · the » in the post meta and list lines is the owner's own punctuation from the old site; the pager's « and » sit outside the links as direction marks */
+/* Hallmark · finish-review: in-thread (no subagent tool in this harness) · 2 findings · 2 resolved · gap: none; the » and date in the post index now stay together on a phone, and the search field shows its label on desktop as the old sidebar showed a hint */
+/* Hallmark · note 58 · copy: verbatim; the posts are long reads in the owner's words, so the screen budget is a note */
+/* Hallmark · waive 49b · reference links in the posts are the owner's full paper and page titles · on a 320px phone a title like the Molmo or arXiv paper names cannot shorten without rewriting his copy */
+/* Hallmark · dismissed 76 · the Colab logo (Wikimedia Commons) and the Unsplash running photo are images the owner placed in his own posts, linked as he wrote them; this sandbox cannot reach those hosts, so they do not paint in the shots */
+/* Hallmark · dismissed F1 · the straight apostrophe is in the owner's post title (Garmin's), which Zola prints as written */
+/* Hallmark · dismissed F21 · the skipped heading levels are in the owner's post bodies, kept verbatim */
+/* Hallmark · dismissed F23 · the pages without a description are redirect pages for old addresses, marked noindex */
+/* Hallmark · dismissed render · api.fontshare.com is unreachable from this sandbox; Switzer is installed locally for the checks, so the shots show the real face */
 
-/* Shared components only. Load order: tokens.css, base.css, site.css, then the page's own sheet.
-   Page layouts (hero, about, projects grid, gallery grid) live in home.css and gallery.css. */
+/* Shared components only, as on amintaheri23.github.io (the main site's site.css, without the hero,
+   gallery, lightbox, filters, panels and contact rules the blog has no markup for).
+   Load order: tokens.css, base.css, site.css, then blog.css. */
 
 :root {
   --nav-h: 64px;
@@ -52,25 +60,22 @@ html, body { overflow-x: clip; }
 
 a { color: var(--color-ink); text-decoration-color: var(--color-muted-2); transition: color var(--dur-short) var(--ease-out), text-decoration-color var(--dur-short) var(--ease-out); }
 a:hover { color: var(--color-accent); text-decoration-color: currentColor; }
+a:active { color: var(--color-focus); }
 a:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; border-radius: 0; }
 
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 
 .icon { width: var(--icon-size); height: var(--icon-size); flex-shrink: 0; fill: currentColor; }
 
+/* Skip link: off screen until focused, then on top of the nav. */
+.skip-link { position: absolute; top: var(--space-xs); left: var(--space-xs); z-index: var(--z-modal); padding: var(--space-xs) var(--space-md); background: var(--color-paper-2); color: var(--color-ink); border: var(--rule-hair) solid var(--color-rule); font-weight: 500; text-decoration: none; transform: translateY(calc(-100% - var(--space-md))); }
+.skip-link:focus, .skip-link:focus-visible { transform: none; outline: 2px solid var(--color-focus); outline-offset: 2px; }
+
 /* ---------- Layout ---------- */
 .container { width: 100%; max-width: var(--container); margin-inline: auto; padding-inline: var(--gutter); }
-.section { padding-block: var(--section-gap-s); }
-.section + .section { border-top: var(--rule-hair) solid var(--color-rule); }
-.band { background: var(--color-paper-3); color: var(--color-ink); }
-.section-head { display: grid; gap: var(--space-sm); margin-bottom: var(--space-xl); }
-.section-head > p { color: var(--color-ink-2); }
 .muted { color: var(--color-muted); }
-.label { font-size: var(--text-sm); font-weight: 500; line-height: 1.4; color: var(--color-muted); letter-spacing: 0; }
-/* A heading set as a label: the panel and glossary heads (Research Interest, Education, Description:). */
-.label-head { margin: 0; max-width: none; font-family: var(--font-body); font-size: var(--text-sm); font-weight: 500; line-height: 1.4; letter-spacing: 0; color: var(--color-ink); text-wrap: wrap; }
 
-/* Rim heads: Switzer 500, the hero at --tracking-display, section heads at -0.03em, line-height 1.02. */
+/* Rim heads: Switzer 500, the masthead at --tracking-display, section heads at -0.03em, line-height 1.02. */
 h1, h2 { line-height: 1.02; }
 h2 { letter-spacing: -0.03em; }
 h3 { letter-spacing: -0.02em; }
@@ -93,45 +98,28 @@ h3 { letter-spacing: -0.02em; }
 .btn--primary { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-accent-ink); }
 .btn--primary:hover { background: color-mix(in oklab, var(--color-accent) 85%, var(--color-ink)); border-color: color-mix(in oklab, var(--color-accent) 85%, var(--color-ink)); color: var(--color-accent-ink); }
 .btn--primary:active { background: color-mix(in oklab, var(--color-accent) 88%, var(--color-accent-ink)); border-color: color-mix(in oklab, var(--color-accent) 88%, var(--color-accent-ink)); }
-.btn--quiet { background: transparent; border-color: var(--color-rule); }
-.btn--quiet:hover { background: var(--color-paper-2); border-color: var(--color-muted-2); }
-.btn-row { display: flex; flex-wrap: wrap; gap: var(--space-sm); }
 @media (prefers-reduced-motion: reduce) { .btn { transition: none; } }
 
-/* ---------- Chips (filters; the current state = orange edge on a dark orange fill) ---------- */
-.chips__label { max-width: none; font-family: var(--font-body); font-size: var(--text-sm); font-weight: 500; letter-spacing: 0; line-height: 1.4; color: var(--color-muted); margin: 0 0 var(--space-xs); }
-.chips { display: flex; flex-wrap: wrap; gap: var(--space-xs); }
+/* ---------- Chips (the current state = orange edge on a dark orange fill) ---------- */
+.chips { display: flex; flex-wrap: wrap; gap: var(--space-xs); margin: 0; padding: 0; list-style: none; }
 .chip {
-  display: inline-flex; align-items: center; min-height: 44px; padding: 0 var(--space-sm);
+  display: inline-flex; align-items: center; gap: var(--space-2xs); min-height: 44px; padding: 0 var(--space-sm);
   border: var(--rule-hair) solid var(--color-rule); border-radius: var(--radius-chip);
   background: var(--color-paper); color: var(--color-ink-2);
-  font: 500 var(--text-sm)/1 var(--font-body); letter-spacing: 0; white-space: nowrap; cursor: pointer;
+  font: 500 var(--text-sm)/1 var(--font-body); letter-spacing: 0; white-space: nowrap; text-decoration: none; cursor: pointer;
   transition: background-color var(--dur-short) var(--ease-out), border-color var(--dur-short) var(--ease-out), color var(--dur-short) var(--ease-out);
 }
 .chip:hover { border-color: var(--color-muted-2); background: var(--color-paper-2); color: var(--color-ink); }
 .chip:active { background: var(--color-rule); }
 .chip:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
-.chip[aria-pressed="true"] { background: var(--color-accent-soft); border-color: var(--color-accent); color: var(--color-ink); }
-.chip[aria-pressed="true"]:hover { border-color: var(--color-accent); background: var(--color-accent-soft); }
+.chip[aria-pressed="true"], .chip[aria-current="page"] { background: var(--color-accent-soft); border-color: var(--color-accent); color: var(--color-ink); }
+.chip[aria-pressed="true"]:hover, .chip[aria-current="page"]:hover { border-color: var(--color-accent); background: var(--color-accent-soft); color: var(--color-ink); }
 .chip:disabled, .chip[aria-disabled="true"] { opacity: 0.55; cursor: not-allowed; }
-.chip[aria-busy="true"] { cursor: progress; }
 @media (prefers-reduced-motion: reduce) { .chip { transition: none; } }
-
-/* ---------- Glossary ---------- */
-.glossary { margin: 0; display: grid; gap: var(--space-xs); }
-.glossary__item { display: grid; gap: var(--space-3xs); }
-.glossary dt { font-weight: 500; color: var(--color-ink); font-size: var(--text-sm); }
-.glossary dd { margin: 0; color: var(--color-muted); font-size: var(--text-sm); }
-
-/* ---------- Panels (one surface, 1px seams) ---------- */
-.panels { display: grid; gap: var(--rule-hair); background: var(--color-rule); color: var(--color-ink); border: var(--rule-hair) solid var(--color-rule); border-radius: var(--radius-card); overflow: hidden; }
-.panels > * { background: var(--color-paper-2); color: var(--color-ink); min-width: 0; }
 
 /* ---------- Figures and photographs ---------- */
 figure { margin: 0; }
 figcaption { margin-top: var(--space-xs); font-size: var(--text-sm); line-height: 1.45; color: var(--color-muted); }
-figcaption strong, .caption__title { display: block; margin: 0; max-width: none; font: inherit; font-weight: 500; letter-spacing: 0; color: var(--color-ink-2); }
-.caption__desc { display: block; }
 picture { display: block; }
 /* Every picture sits in a .frame: true colour on a paper-3 ground, so an image that has not painted yet (or a letterboxed one) shows the deepest step. */
 .frame { display: block; background: var(--color-paper-3); border-radius: var(--radius-card); outline: var(--rule-hair) solid var(--color-rule); outline-offset: -1px; overflow: hidden; }
@@ -148,14 +136,15 @@ picture { display: block; }
 .nav__inner { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; column-gap: var(--space-lg); min-height: calc(var(--nav-h) - var(--rule-hair)); }
 .nav__brand { font-family: var(--font-display); font-weight: 500; font-size: var(--text-lg); letter-spacing: -0.01em; color: var(--color-ink); text-decoration: none; white-space: nowrap; padding-block: var(--space-xs); }
 .nav__brand:hover { color: var(--color-ink); text-decoration: underline; text-decoration-color: var(--color-muted-2); }
-.nav__links { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2xs) var(--space-md); margin: 0; padding: 0; list-style: none; }
-.nav__links a { display: inline-flex; align-items: center; min-height: 44px; font-size: var(--text-sm); font-weight: 500; color: var(--color-muted); text-decoration: none; }
+.nav__links { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2xs) var(--space-md); margin: 0; padding: 0; list-style: none; font-size: var(--text-sm); }
+.nav__links a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 500; color: var(--color-muted); text-decoration: none; white-space: nowrap; }
 .nav__links a:hover { color: var(--color-ink); text-decoration: underline; text-decoration-color: var(--color-muted-2); }
 .nav__links a[aria-current="page"] { color: var(--color-ink); text-decoration: underline; text-decoration-color: var(--color-accent); text-underline-offset: 0.4em; }
-.nav__toggle { display: none; align-items: center; gap: var(--space-xs); min-height: 40px; padding: 0 var(--space-sm); border: var(--rule-hair) solid var(--color-rule); border-radius: var(--radius-pill); background: var(--color-paper-2); color: var(--color-ink); font: 500 var(--text-sm)/1 var(--font-body); cursor: pointer; transition: background-color var(--dur-short) var(--ease-out); }
+.nav__toggle { display: none; align-items: center; gap: var(--space-xs); min-height: 44px; padding: 0 var(--space-sm); border: var(--rule-hair) solid var(--color-rule); border-radius: var(--radius-pill); background: var(--color-paper-2); color: var(--color-ink); font: 500 var(--text-sm)/1 var(--font-body); cursor: pointer; transition: background-color var(--dur-short) var(--ease-out); }
 .nav__toggle:hover { background: var(--color-rule); }
 .nav__toggle:active { background: var(--color-paper-3); }
 .nav__toggle:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
+.nav__toggle:disabled { opacity: 0.55; cursor: not-allowed; }
 .nav__toggle[aria-expanded="true"] { background: var(--color-accent-soft); border-color: var(--color-accent); }
 @media (max-width: 60rem) {
   .nav__links { padding-bottom: var(--space-xs); column-gap: var(--space-md); }
@@ -166,45 +155,7 @@ picture { display: block; }
   .js .nav__toggle[aria-expanded="false"]:not([hidden]) ~ .nav__links { display: none; }
 }
 
-/* ---------- Contact (on every page) ---------- */
-.contact { background: var(--color-paper-2); border-top: var(--rule-hair) solid var(--color-rule); }
-.contact__inner { display: grid; gap: var(--space-lg); align-items: start; }
-.contact__body { display: grid; gap: var(--space-lg); justify-items: start; }
-.contact__body p { color: var(--color-ink-2); font-size: var(--text-lead); line-height: 1.5; max-width: 52ch; }
-.contact .btn--primary { white-space: normal; text-align: left; overflow-wrap: anywhere; }
-@media (min-width: 60rem) {
-  .contact__inner { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: var(--gap-columns); }
-}
+/* ---------- Footer ---------- */
+.footer { margin-top: var(--section-gap-s); padding-block: var(--space-xl); border-top: var(--rule-hair) solid var(--color-rule); }
 
-/* ---------- Footer (letter close) ---------- */
-.footer { padding-block: var(--space-2xl) var(--space-xl); }
-.footer__sign { margin: 0; padding-bottom: var(--space-md); border-bottom: var(--rule-hair) solid var(--color-rule); font-family: var(--font-display); font-weight: var(--display-weight); font-size: var(--text-section); letter-spacing: var(--tracking-display); line-height: 1.04; color: var(--color-ink); max-width: none; }
-.footer__links { display: flex; flex-wrap: wrap; gap: var(--space-2xs) var(--space-lg); margin: var(--space-md) 0 0; padding: 0; list-style: none; }
-.footer__links a { display: inline-flex; align-items: center; min-height: 44px; font-size: var(--text-sm); font-weight: 500; color: var(--color-muted); text-decoration: none; }
-.footer__links a:hover { color: var(--color-ink); text-decoration: underline; text-decoration-color: var(--color-muted-2); }
-
-/* ---------- Lightbox (markup created by site.js) ---------- */
-.lightbox { width: 100%; max-width: 100%; height: 100%; max-height: 100%; margin: 0; padding: var(--space-md); border: 0; background: transparent; color: var(--color-ink); overflow: hidden; }
-.lightbox::backdrop { background: color-mix(in oklab, var(--color-paper-3) 94%, transparent); }
-/* Bar on top; picture, caption and controls held together and centred in what is left. */
-.lightbox[open] { display: grid; grid-template-rows: auto minmax(0, 1fr) auto auto minmax(0, 1fr); gap: var(--space-sm); }
-.lightbox__bar { grid-row: 1; }
-.lightbox__figure { grid-row: 3; }
-.lightbox__nav { grid-row: 4; }
-.lightbox__bar { display: flex; justify-content: flex-end; gap: var(--space-xs); }
-.lightbox__figure { display: grid; grid-template-rows: auto auto; align-content: center; gap: var(--space-sm); min-height: 0; margin: 0; justify-items: center; }
-.lightbox__img { max-width: 100%; max-height: calc(100svh - 2 * var(--space-md) - 4 * var(--space-sm) - 88px - 4.5rem); width: auto; height: auto; min-height: 0; object-fit: contain; border-radius: var(--radius-card); outline: var(--rule-hair) solid var(--color-rule); outline-offset: -1px; }
-.lightbox__caption { margin: 0; max-width: 65ch; text-align: center; font-size: var(--text-sm); color: var(--color-muted); }
-.lightbox__title { display: block; font-weight: 500; color: var(--color-ink); }
-.lightbox__desc { display: block; }
-.lightbox__nav { display: flex; justify-content: center; gap: var(--space-sm); }
-.lightbox__btn { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-xs); min-width: 44px; min-height: 44px; padding: 0 var(--space-sm); border: var(--rule-hair) solid var(--color-rule); border-radius: var(--radius-pill); background: var(--color-paper-2); color: var(--color-ink); font: 500 var(--text-sm)/1 var(--font-body); cursor: pointer; transition: background-color var(--dur-short) var(--ease-out); }
-.lightbox__btn:hover { background: var(--color-rule); }
-.lightbox__btn:active { background: var(--color-paper-3); }
-.lightbox__btn:focus-visible { outline: 2px solid var(--color-focus); outline-offset: 2px; }
-.lightbox__btn:disabled { opacity: 0.55; cursor: not-allowed; }
-@media (prefers-reduced-motion: no-preference) {
-  .lightbox[open] { animation: lightbox-in var(--dur-short) var(--ease-out); }
-}
-@keyframes lightbox-in { from { opacity: 0; } to { opacity: 1; } }
-@media (prefers-reduced-motion: reduce) { .lightbox__btn, .nav__toggle, .social__link, a { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .nav__toggle, .social__link, a { transition: none; } }

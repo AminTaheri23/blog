@@ -28,10 +28,10 @@
 {%- if page.higher or page.lower %}
 <nav class="pager" aria-label="More posts">
   {%- if page.higher %}
-  <a class="pager__link pager__link--prev" href="{{ page.higher.permalink }}" rel="prev">« {{ page.higher.title }}</a>
+  <p class="pager__item pager__item--prev"><span class="pager__mark" aria-hidden="true">«</span> <a class="pager__link pager__link--prev" href="{{ page.higher.permalink }}" rel="prev" title="{{ page.higher.title }}">{{ page.higher.title }}</a></p>
   {%- endif %}
   {%- if page.lower %}
-  <a class="pager__link pager__link--next" href="{{ page.lower.permalink }}" rel="next">{{ page.lower.title }} »</a>
+  <p class="pager__item pager__item--next"><a class="pager__link pager__link--next" href="{{ page.lower.permalink }}" rel="next" title="{{ page.lower.title }}">{{ page.lower.title }}</a> <span class="pager__mark" aria-hidden="true">»</span></p>
   {%- endif %}
 </nav>
 {%- endif %}
