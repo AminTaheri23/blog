@@ -1,0 +1,174 @@
+name: Build and deploy (Zola)
+
+on:
+  push:
+    branches: [ master, main ]
+  pull_request:
+    branches: [ master, main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  ZOLA_VERSION: "0.23.6"
+
+jobs:
+  validate:
+    name: Validate posts
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.x'
+
+      - name: Check front matter and image references
+        run: |
+          python3 << 'PYEOF'
+          import glob, re, sys, tomllib, datetime, os
+
+          errors = []
+          posts = sorted(glob.glob('content/posts/*.md'))
+          posts = [p for p in posts if os.path.basename(p) != '_index.md']
+          if not posts:
+              errors.append(('content/posts', 'no posts found'))
+          for path in posts:
+              text = open(path, encoding='utf-8').read()
+              m = re.match(r'\+\+\+\r?\n(.*?)\r?\n\+\+\+', text, re.S)
+              if not m:
+                  errors.append((path, 'missing TOML front matter (+++ ... +++)'))
+                  continue
+              try:
+                  fm = tomllib.loads(m.group(1))
+              except tomllib.TOMLDecodeError as e:
+                  errors.append((path, f'front matter does not parse: {e}'))
+                  continue
+              if not str(fm.get('title', '')).strip():
+                  errors.append((path, 'missing title'))
+              date = fm.get('date')
+              if not isinstance(date, datetime.datetime) or date.tzinfo is None:
+                  errors.append((path, 'date must be a datetime with a UTC offset, e.g. 2026-09-06T21:21:38-02:30'))
+              cats = (fm.get('taxonomies') or {}).get('category') or []
+              if not cats:
+                  errors.append((path, 'needs at least one [taxonomies] category'))
+              print(f"OK   {path}" if not any(e[0] == path for e in errors) else f"FAIL {path}")
+
+          for path in sorted(glob.glob('content/**/*.md', recursive=True)):
+              text = open(path, encoding='utf-8').read()
+              for name in sorted(set(re.findall(r'/blog/static/img/posts/([^\s)"\'<>]+)', text))):
+                  if not os.path.isfile(os.path.join('static/static/img/posts', name)):
+                      errors.append((path, f'image /blog/static/img/posts/{name} is missing from static/static/img/posts/'))
+
+          for path, msg in errors:
+              print(f"::error file={path}::{msg}")
+          if errors:
+              sys.exit(1)
+          print(f"\nAll {len(posts)} posts valid.")
+          PYEOF
+
+  build:
+    name: Build site
+    runs-on: ubuntu-latest
+    needs: validate
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Install Zola
+        run: |
+          mkdir -p "$HOME/.local/bin"
+          curl -fsSL "https://github.com/getzola/zola/releases/download/v${ZOLA_VERSION}/zola-v${ZOLA_VERSION}-x86_64-unknown-linux-gnu.tar.gz" \
+            | tar -xz -C "$HOME/.local/bin"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: Zola version
+        run: zola --version
+
+      - name: Build
+        run: |
+          set -o pipefail
+          zola build 2>&1 | tee build.log
+          if grep -qi 'warn' build.log; then
+            echo "::error::zola build printed warnings (see the log above)"
+            exit 1
+          fi
+
+      - name: Assert output
+        run: |
+          out=public
+          missing=()
+          for f in \
+            index.html 404.html feed.xml sitemap.xml search_index.en.json \
+            css/site.css css/blog.css js/site.js \
+            about/index.html projects/index.html category/index.html \
+            static/img/favicon.ico \
+            static/img/posts/garmin-hair-tie-extender.jpeg \
+            static/img/posts/garmin-instinct-2s-wrist.jpeg \
+            others/2024/10/21/hello-world.html \
+            ai/python/cloud/linux/2024/12/24/google-colab.html \
+            ai/python/linux/other/2024/12/30/ESGAnalysisProjectUpdate.html \
+            idea/ai/2025/01/05/generative-transformer-based-ai-for-gaming-evaluation.html \
+            ai/python/2025/11/09/MAS-for-software-devs.html \
+            ai/python/2025/11/08/trends-in-llms-health-fintech.html \
+            blindtyping/2025/12/06/A-Continuum-of-Complexity.html \
+            blindtyping/idea/2025/12/06/blind-typing-editor.html \
+            blindtyping/2025/12/06/blind-typing.html \
+            blindtyping/idea/2025/12/07/offline-robot-pet.html \
+            blindtyping/2025/12/07/top-down-model-education.html \
+            blindtyping/idea/ai/2025/12/08/Biological-Learning-Meets-LLM-Training-A-Case-for-Curriculum-Learning-with-Dynamic-Architecture.html \
+            blindtyping/idea/ai/2025/12/08/vlm-spatial-blog.html \
+            running/fitness/2026/09/06/fixing-garmin-heart-rate-accuracy.html
+          do
+            [ -f "$out/$f" ] || missing+=("$out/$f")
+          done
+          for c in ai bash blindtyping cloud codefights django fitness idea jekyll linux nginx others \
+                   philosophy python raspberry ruby running security server ssl ubuntu; do
+            [ -f "$out/category/$c.html" ] || missing+=("$out/category/$c.html")
+          done
+          if [ ${#missing[@]} -gt 0 ]; then
+            echo "::error::Missing build output: ${missing[*]}"
+            printf 'missing: %s\n' "${missing[@]}"
+            exit 1
+          fi
+          echo "All expected files present."
+
+      - name: Configure Pages
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: actions/configure-pages@v6
+
+      - name: Upload Pages artifact
+        if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+        uses: actions/upload-pages-artifact@v5
+        with:
+          path: public
+
+      - name: Upload build for review
+        if: github.event_name == 'pull_request'
+        uses: actions/upload-artifact@v7
+        with:
+          name: zola-site
+          path: public
+          retention-days: 7
+
+  deploy:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+    needs: build
+    if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+    permissions:
+      pages: write
+      id-token: write
+    concurrency:
+      group: pages
+      cancel-in-progress: false
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v5
