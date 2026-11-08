@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Page not found - {{ config.title }}{% endblock title %}
+{% block canonical %}
+  <meta name="robots" content="noindex">
+{%- endblock canonical %}
+{% block content %}
+<article class="page">
+  <h1 class="page__title">Page not found</h1>
+  <div class="prose">
+    <p>Nothing lives at this address. Try the <a href="{{ get_url(path='@/_index.md') }}">list of all posts</a> or the search above.</p>
+  </div>
+</article>
+{% endblock content %}

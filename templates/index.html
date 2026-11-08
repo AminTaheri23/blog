@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="home" aria-labelledby="home-heading">
+  <h1 id="home-heading" class="home__title">{{ config.title }}/blog</h1>
+  {%- set posts = paginator.pages if paginator is defined else section.pages %}
+  <ol class="post-list">
+  {%- for p in posts %}
+    <li class="post-list__item"><a class="post-list__link" href="{{ p.permalink }}">{{ p.title }}</a> » <time class="post-list__date" datetime="{{ p.date }}">{{ p.date | date(format="%d %b %Y", timezone="UTC") }}</time></li>
+  {%- endfor %}
+  </ol>
+  {%- if paginator is defined and paginator.number_pagers > 1 %}
+  <nav class="pager" aria-label="Pages">
+    {%- if paginator.previous %}<a class="pager__link pager__link--prev" href="{{ paginator.previous }}" rel="prev">« Newer posts</a>{% endif %}
+    {%- if paginator.next %}<a class="pager__link pager__link--next" href="{{ paginator.next }}" rel="next">Older posts »</a>{% endif %}
+  </nav>
+  {%- endif %}
+</section>
+{% endblock content %}

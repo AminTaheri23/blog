@@ -1,0 +1,10 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Redirecting…</title>
+<link rel="canonical" href="{{ url | safe }}">
+<meta name="robots" content="noindex">
+<script>location.replace({{ url | json_encode | safe }} + location.hash);</script>
+<noscript><meta http-equiv="refresh" content="0; url={{ url | safe }}"></noscript>
+<p><a href="{{ url | safe }}">{{ url | safe }}</a></p>
+</html>

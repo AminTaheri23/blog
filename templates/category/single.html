@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}{{ term.name }} - {{ config.title }}{% endblock title %}
+{% block description %}{{ term.name }}{% endblock description %}
+{% block content %}
+<section class="term" aria-labelledby="term-heading">
+  <h1 id="term-heading">Articles by category: {{ term.name }}</h1>
+  <ul class="chips chips--links" aria-label="Categories">
+  {%- set all_terms = get_taxonomy(kind="category") %}
+  {%- for t in all_terms.items %}
+    <li><a class="chip" href="{{ t.permalink }}"{% if t.name == term.name %} aria-current="page"{% endif %}>{{ t.name }}</a></li>
+  {%- endfor %}
+  </ul>
+  {%- set pages = paginator.pages if paginator is defined else term.pages %}
+  {%- for y in [p.date | date(format="%Y", timezone="UTC") for p in pages] | unique %}
+  <h2 class="post-list__year">{{ y }}</h2>
+  <ol class="post-list">
+    {%- for p in pages %}{% if (p.date | date(format="%Y", timezone="UTC")) == y %}
+    <li class="post-list__item"><a class="post-list__link" href="{{ p.permalink }}">{{ p.title }}</a> » <time class="post-list__date" datetime="{{ p.date }}">{{ p.date | date(format="%d %b %Y", timezone="UTC") }}</time></li>
+    {%- endif %}{% endfor %}
+  </ol>
+  {%- else %}
+  <p>There are no posts in this categories.</p>
+  {%- endfor %}
+</section>
+{% endblock content %}

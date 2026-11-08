@@ -1,0 +1,49 @@
+# Zola site configuration (Zola 0.23.6)
+base_url = "https://amintaheri23.github.io/blog"
+title = "Hallucinations of a programmer mind"
+description = "My Personal blogs about everything"
+default_language = "en"
+author = "Amin Taheri"
+
+compile_sass = false
+minify_html = false
+
+# RSS 2.0 at /blog/feed.xml (templates/feed.xml), the 10 newest posts
+generate_feeds = true
+feed_filenames = ["feed.xml"]
+feed_limit = 10
+
+# /blog/search_index.en.json, read by static/js/site.js
+build_search_index = true
+
+taxonomies = [
+  { name = "category" },
+  { name = "tags", render = false },
+]
+
+[markdown]
+smart_punctuation = true
+bottom_footnotes = true
+
+[markdown.highlighting]
+# Class-based output: spans get class="z-N", Zola writes the stylesheet to public/giallo.css
+style = "class"
+theme = "github-light"
+
+[search]
+index_format = "fuse_json"
+include_title = true
+include_description = false
+include_path = false
+include_content = true
+truncate_content_length = 300
+
+[extra]
+author = "Amin Taheri"
+google_analytics = "G-0742CLEG9T"
+disqus_shortname = "amintaheriblog"
+# The old site.url: the Disqus identifier is disqus_prefix ~ "_" ~ the old post title
+disqus_prefix = "https://amintaheri23.github.io/blog"
+main_site = "https://amintaheri23.github.io/"
+twitter_username = "sed_amin"
+github = "https://github.com/amintaheri23"

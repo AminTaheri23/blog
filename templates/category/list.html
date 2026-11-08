@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Categories - {{ config.title }}{% endblock title %}
+{% block description %}Categories{% endblock description %}
+{% block content %}
+<section class="categories" aria-labelledby="categories-heading">
+  <h1 id="categories-heading">Categories</h1>
+  <ul class="chips chips--links">
+  {%- for t in terms %}
+    <li><a class="chip" href="{{ t.permalink }}">{{ t.name }} <span class="chip__count">({{ t.page_count }})</span></a></li>
+  {%- endfor %}
+  </ul>
+</section>
+{% endblock content %}

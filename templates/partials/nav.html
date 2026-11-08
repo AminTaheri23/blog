@@ -1,0 +1,22 @@
+{%- set here = current_path if current_path is defined else "" -%}
+<nav class="nav" aria-label="Main">
+  <div class="container nav__inner">
+    <a class="nav__brand" href="{{ config.extra.main_site }}">{{ config.extra.author }}</a>
+    <button type="button" class="nav__toggle" aria-expanded="false" aria-controls="nav-links" hidden>{{ <icon name="menu" /> }}Menu</button>
+    <ul class="nav__links" id="nav-links">
+      <li><a href="{{ get_url(path='@/_index.md') }}"{% if here == "/" %} aria-current="page"{% endif %}>Home</a></li>
+      <li><a href="{{ get_url(path='@/pages/about.md') }}"{% if here == "/about/" %} aria-current="page"{% endif %}>About Me</a></li>
+      <li><a href="{{ get_url(path='feed.xml') }}">XML Feed</a></li>
+    </ul>
+    <form class="search" role="search" action="https://duckduckgo.com/" method="get">
+      <label class="search__label" for="search-input">Search posts</label>
+      <input class="search__input" id="search-input" name="q" type="search" autocomplete="off"
+             aria-controls="search-results" aria-expanded="false" aria-autocomplete="list" role="combobox"
+             data-index="{{ get_url(path='search_index.en.json') }}">
+      <input type="hidden" name="sites" value="amintaheri23.github.io/blog">
+      <button class="search__submit btn" type="submit">Search</button>
+      <ul class="search__results" id="search-results" role="listbox" hidden></ul>
+      <p class="search__status visually-hidden" aria-live="polite"></p>
+    </form>
+  </div>
+</nav>

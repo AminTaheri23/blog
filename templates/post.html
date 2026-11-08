@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block content %}
+{%- set cats = page.taxonomies.category or [] %}
+<article class="post">
+  <header class="post__head">
+    <h1 class="post__title">{{ page.title }}</h1>
+    <p class="post__meta"><time datetime="{{ page.date }}">{{ page.date | date(format="%d %b %Y", timezone="UTC") }}</time>
+    {%- if cats %} » <span class="post__cats">{% for c in cats %}<a href="{{ get_taxonomy_url(kind='category', term=c) }}">{{ c }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</span>{% endif %}</p>
+  </header>
+  <div class="prose">{{ page.content | safe }}</div>
+</article>
+{#- Related: the Jekyll logic. All posts newest first, skip this one, keep those sharing a category, stop at 6. #}
+{%- set posts_section = get_section(path="posts/_index.md") %}
+{%- set all_posts = posts_section.pages %}
+{%- set related = [p for p in all_posts if p.permalink != page.permalink and [c for c in (p.taxonomies.category or []) if c in cats] | length > 0][:6] %}
+{%- if related | length > 0 %}
+<nav class="related" aria-labelledby="related-heading">
+  <h2 id="related-heading">Related Posts</h2>
+  <ul class="related__list">
+  {%- for p in related %}
+    <li class="related__item"><a href="{{ p.permalink }}">{{ p.title }}</a>
+      {%- if p.taxonomies.category %} <span class="related__cats">(Categories: {% for c in p.taxonomies.category %}<a href="{{ get_taxonomy_url(kind='category', term=c) }}">{{ c }}</a>{% if not loop.last %}, {% endif %}{% endfor %})</span>{% endif %}</li>
+  {%- endfor %}
+  </ul>
+</nav>
+{%- endif %}
+{#- With sort_by = "date", page.higher is the next older post and page.lower the next newer one. #}
+{%- if page.higher or page.lower %}
+<nav class="pager" aria-label="More posts">
+  {%- if page.higher %}
+  <a class="pager__link pager__link--prev" href="{{ page.higher.permalink }}" rel="prev">« {{ page.higher.title }}</a>
+  {%- endif %}
+  {%- if page.lower %}
+  <a class="pager__link pager__link--next" href="{{ page.lower.permalink }}" rel="next">{{ page.lower.title }} »</a>
+  {%- endif %}
+</nav>
+{%- endif %}
+{%- set disqus_title = page.extra.disqus_title or page.title %}
+{%- set disqus_identifier = config.extra.disqus_prefix ~ "_" ~ disqus_title %}
+<section class="comments" id="comments" aria-labelledby="comments-heading"
+         data-disqus-shortname="{{ config.extra.disqus_shortname }}"
+         data-disqus-identifier="{{ disqus_identifier }}"
+         data-disqus-title="{{ disqus_title }}"
+         data-disqus-url="{{ page.permalink }}">
+  <h2 id="comments-heading">Comments</h2>
+  <button class="btn comments__load" type="button" hidden>Load comments</button>
+  <div id="disqus_thread"></div>
+  <script>
+    var disqus_config = function () {
+      this.page.url = {{ page.permalink | json_encode | safe }};
+      this.page.identifier = {{ disqus_identifier | json_encode | safe }};
+      this.page.title = {{ disqus_title | json_encode | safe }};
+    };
+  </script>
+  <noscript><p>Comments are powered by Disqus and need JavaScript. <a href="https://disqus.com/?ref_noscript">View the comments on Disqus</a>.</p></noscript>
+</section>
+{% endblock content %}
