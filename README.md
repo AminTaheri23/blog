@@ -1,91 +1,75 @@
 ## My blog
 
-> This project forked and has been modified from [A simple grey theme for Jekyll](https://github.com/liamsymonds/simplygrey-jekyll),
-> and the search posts using [Super Search](https://github.com/chinchang/super-search)
-> I got this from Agus ([agusmakmun](agusmakmun.github.io))
+Source of my blog, built with [Zola](https://www.getzola.org) 0.23.6.
 
-### Demo
-* [https://amintaheri23.github.io/blog](https://amintaheri23.github.io/blog)
+Live at: <https://amintaheri23.github.io/blog>
 
-#### Features
+The design is shared with my main site ([AminTaheri23/AminTaheri23.github.io](https://github.com/AminTaheri23/AminTaheri23.github.io)):
+[Hallmark](https://github.com/nutlope/hallmark), Rim theme, locked in [design.md](design.md). Font: [Switzer](https://www.fontshare.com/fonts/switzer) (Fontshare).
+Icons: [Font Awesome Free 6](https://fontawesome.com) ([CC BY 4.0](https://fontawesome.com/license/free)), inlined as SVG.
 
-* Sitemap and XML Feed
-* Pagination in homepage
-* Posts under category
-* Realtime Search Posts _(title & description)_ by query.
-* Related Posts
-* Highlight pre
-* Next & Previous Post
-* Disqus comment
-* Projects page & Detail Project page
-* Share on social media
-* Google analytics
-* HTML Minify _(Compress HTML)_ using [Jekyll Compress HTML](https://github.com/penibelst/jekyll-compress-html)
+### Features
 
-### Install & Configuration
+- Posts list, category pages (`/category/<name>/`) and an About page
+- RSS feed at `/feed.xml` and a sitemap at `/sitemap.xml`
+- Search over post titles and text (Zola search index, small vanilla JS, keyboard accessible)
+- Related posts and older/newer links
+- Disqus comments, loaded when you scroll to them
+- Google Analytics
+- Old Jekyll URLs keep working as redirect pages
 
-1. Fork this repository
-2. Edit site settings inside file of `_config.yml`
-3. Edit your projects at file of `projects.md`, `_data/projects.json` and inside path of `_project/` _(for detail project)_.
-4. Edit about yourself inside file of `about.md`
-5. Remove the '/blog' from all of the project if you want this to be your main website.
-### How to Use?
+### Quick start
 
-**a. Add new Category**
+1. Install Zola **0.23.6**: <https://www.getzola.org/documentation/getting-started/installation/>
+2. `zola serve` and open <http://127.0.0.1:1111/blog/>
+3. `zola build` writes the site to `public/` (git-ignored); it must build with 0 warnings.
 
-All categories saved inside path of `category/`, you can see the existed categories.
-
-**b. Add new Posts**
-
-* All posts bassed on markdown syntax _(please googling)_. allowed extensions is `*.markdown` or `*.md`.
-* This files can found at the path of `_posts/`.
-* and the name of files are following `<date:%Y-%m-%d>-<slug>.<extension>`, for example:
+### Structure
 
 ```
-2013-09-23-welcome-to-jekyll.md
-
-# or
-
-2013-09-23-welcome-to-jekyll.markdown
+.
+├── config.toml               # Site configuration (base URL, feed, search, taxonomies, analytics, Disqus)
+├── content/
+│   ├── _index.md             # Home: all posts, newest first
+│   ├── posts/                # One file per post: YYYY-MM-DD-slug.md
+│   └── pages/about.md        # /about/
+├── templates/                # Tera 2 templates; macros.html holds the shared components
+├── static/
+│   ├── css/                  # tokens.css, base.css, site.css, blog.css
+│   ├── js/site.js            # Nav toggle, search, Disqus loader
+│   ├── static/img/posts/     # Post images, served at /blog/static/img/posts/
+│   ├── category/*.html       # Redirects from the old /category/<name>.html URLs
+│   └── projects/index.html   # Redirect to the main site's projects
+├── design.md                 # The locked design system
+└── .github/workflows/zola.yml  # CI: validate, build, assert outputs, deploy to GitHub Pages
 ```
 
-Inside the file of it,
+### Adding a post
 
-```
----
-layout: post                          # (require) default post layout
-title: "Your Title"                   # (require) a string title
-date: 2016-04-20 19:51:02 +0700       # (require) a post date
-categories: [python, django]          # (custom) some categories, but makesure these categories already exists inside path of `category/`
-tags: [foo, bar]                      # (custom) tags only for meta `property="article:tag"`
-image: Broadcast_Mail.png             # (custom) image only for meta `property="og:image"`, save your image inside path of `static/img/_posts`
----
+Create `content/posts/YYYY-MM-DD-slug.md`:
 
-# your content post with markdown syntax goes here...
-```
+```toml
++++
+title = "Your Title"
+date = 2026-01-15T19:51:02-02:30
 
+[taxonomies]
+category = ["python", "idea"]
+tags = ["foo", "bar"]
++++
 
-#### Installing in your local
-
-**Option 1:**
-
-```
-bundle install --path vendor/bundle
-
-bundle exec jekyll serve
+Your post in Markdown.
 ```
 
-**Option 2:** If you already installed the jekyll
+The post is published at `/blog/posts/<slug>/` (lower-cased). Categories need no extra file. Put images in
+`static/static/img/posts/` and link them as `/blog/static/img/posts/<file>`.
 
-```
-bundle install
-jekyll serve
-```
+### Deployment
 
-Then visit the http://127.0.0.1:4000
+`.github/workflows/zola.yml` builds and deploys to GitHub Pages on every push to `master`.
+**Settings → Pages → Build and deployment → Source** must be **GitHub Actions**.
 
-**Updating the `Gemfile.lock`**
+### Credits
 
-```
-bundle update
-```
+Originally forked from [A simple grey theme for Jekyll](https://github.com/liamsymonds/simplygrey-jekyll)
+via Agus ([agusmakmun](https://agusmakmun.github.io)); migrated to Zola in 2026.
