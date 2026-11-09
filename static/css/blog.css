@@ -182,7 +182,10 @@ main { display: block; padding-bottom: var(--space-2xl); }
 .comments { margin-top: var(--space-2xl); }
 .comments > * + * { margin-top: var(--space-md); }
 .comments noscript p, .comments > p { color: var(--color-muted); }
-#disqus_thread:empty { display: none; }
+/* The thread stays in the layout while empty: Disqus waits for it to scroll into view before it inserts the iframe, and a hidden box never does.
+   Its text and link colours are sRGB so Disqus picks its dark theme. */
+#disqus_thread { color: var(--color-ink-srgb); }
+#disqus_thread a { color: var(--color-accent-srgb); }
 
 /* ---------- The rail at desktop widths ---------- */
 @media (min-width: 64rem) {
