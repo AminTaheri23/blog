@@ -179,6 +179,17 @@
       button.hidden = false;
       button.addEventListener('click', start);
     }
+    // Focus inside the cross-origin Disqus iframe matches no :focus selector on the frame, so mark the thread by hand.
+    // window blur covers a focused window; focusout covers tabbing in when the window itself has no focus.
+    var thread = d.getElementById('disqus_thread');
+    var markFocus = function () {
+      var a = d.activeElement;
+      thread.classList.toggle('is-focused', !!a && a.tagName === 'IFRAME' && thread.contains(a));
+    };
+    window.addEventListener('blur', markFocus);
+    window.addEventListener('focus', markFocus);
+    d.addEventListener('focusin', markFocus);
+    d.addEventListener('focusout', function () { setTimeout(markFocus, 0); });
     if ('IntersectionObserver' in window) {
       var io = new IntersectionObserver(function (entries) {
         if (entries.some(function (en) { return en.isIntersecting; })) { io.disconnect(); start(); }

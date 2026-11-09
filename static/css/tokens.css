@@ -14,8 +14,8 @@
   --color-rule: oklch(25% 0.010 78); --color-rule-2: oklch(16% 0.009 78);
   --color-accent: oklch(72% 0.17 45); --color-accent-ink: oklch(10% 0.02 45); --color-accent-2: oklch(74% 0.12 250); --color-focus: oklch(78% 0.15 45);
   --color-accent-soft: oklch(24% 0.06 45);
-  /* sRGB twins of ink and accent, for the Disqus embed only: it reads the thread's text and link colour to pick its light or dark theme and cannot parse oklch(). */
-  --color-ink-srgb: #efebe4; --color-accent-srgb: #f97c3d;
+  /* sRGB twins of paper, ink and accent, for the Disqus embed only: it reads the thread's background, text and link colours to pick its theme and throws on oklch(). */
+  --color-paper-srgb: #030201; --color-ink-srgb: #efebe4; --color-accent-srgb: #f97c3d;
   --font-display: "Switzer", ui-sans-serif, system-ui, sans-serif; --font-body: var(--font-display);
   --font-outlier: "Geist Mono", ui-monospace, monospace;
   --radius-card: 0; --radius-pill: 0; --rule-hair: 1px; --shadow-card: none;
