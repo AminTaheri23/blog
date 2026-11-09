@@ -4,7 +4,7 @@
 <article class="post">
   <header class="post__head">
     <h1 class="post__title">{{ page.title }}</h1>
-    <p class="post__meta"><time datetime="{{ page.date }}">{{ page.date | date(format="%d %b %Y", timezone="UTC") }}</time>
+    <p class="post__meta"><time datetime="{{ page.date }}">{{ page.date | date(format="%d %b %Y") }}</time>
     {%- if cats %} » <span class="post__cats">{% for c in cats %}<a href="{{ get_taxonomy_url(kind='category', term=c) }}">{{ c }}</a>{% if not loop.last %}, {% endif %}{% endfor %}</span>{% endif %}</p>
   </header>
   <div class="prose">{{ page.content | safe }}</div>

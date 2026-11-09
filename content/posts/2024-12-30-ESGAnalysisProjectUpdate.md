@@ -7,7 +7,7 @@ aliases = [
 ]
 
 [taxonomies]
-category = ["ai", "python", "linux", "other"]
+category = ["ai", "python", "linux", "others"]
 
 [extra]
 legacy_url = "https://amintaheri23.github.io/blog/ai/python/linux/other/2024/12/30/ESGAnalysisProjectUpdate.html"

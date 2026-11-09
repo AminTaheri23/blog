@@ -36,7 +36,7 @@ Settings → Pages → Source must stay on **GitHub Actions**.
 - **Categories need no extra file.** Any name in `category = [...]` gets its page at
   `/blog/category/<name>/` automatically, and `/blog/category/` lists them all.
   Lower-case names; reuse an existing one where it fits (`ai`, `python`, `idea`,
-  `blindtyping`, `philosophy`, `running`, `fitness`, `linux`, `cloud`, `others`, `other`).
+  `blindtyping`, `philosophy`, `running`, `fitness`, `linux`, `cloud`, `others`).
   The old empty categories (bash, codefights, django, jekyll, nginx, raspberry, ruby,
   security, server, ssl, ubuntu) have redirect stubs at `static/category/<name>.html`
   pointing to `/blog/category/`: if a new post is the first to use one of them, edit

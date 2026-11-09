@@ -125,7 +125,7 @@ jobs:
           do
             [ -f "$out/$f" ] || missing+=("$out/$f")
           done
-          for c in ai bash blindtyping cloud codefights django fitness idea jekyll linux nginx others \
+          for c in ai bash blindtyping cloud codefights django fitness idea jekyll linux nginx other others \
                    philosophy python raspberry ruby running security server ssl ubuntu; do
             [ -f "$out/category/$c.html" ] || missing+=("$out/category/$c.html")
           done

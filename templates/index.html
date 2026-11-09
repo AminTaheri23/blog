@@ -7,7 +7,7 @@
   {%- set posts = paginator.pages if paginator is defined else section.pages %}
   <ol class="post-list">
   {%- for p in posts %}
-    <li class="post-list__item"><a class="post-list__link" href="{{ p.permalink }}">{{ p.title }}</a> <span class="post-list__meta">» <time class="post-list__date" datetime="{{ p.date }}">{{ p.date | date(format="%d %b %Y", timezone="UTC") }}</time></span></li>
+    <li class="post-list__item"><a class="post-list__link" href="{{ p.permalink }}">{{ p.title }}</a> <span class="post-list__meta">» <time class="post-list__date" datetime="{{ p.date }}">{{ p.date | date(format="%d %b %Y") }}</time></span></li>
   {%- endfor %}
   </ol>
   {%- if paginator is defined and paginator.number_pagers > 1 %}

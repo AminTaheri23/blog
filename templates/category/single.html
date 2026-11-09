@@ -11,11 +11,11 @@
   {%- endfor %}
   </ul>
   {%- set pages = paginator.pages if paginator is defined else term.pages %}
-  {%- for y in [p.date | date(format="%Y", timezone="UTC") for p in pages] | unique %}
+  {%- for y in [p.date | date(format="%Y") for p in pages] | unique %}
   <h2 class="post-list__year">{{ y }}</h2>
   <ol class="post-list">
-    {%- for p in pages %}{% if (p.date | date(format="%Y", timezone="UTC")) == y %}
-    <li class="post-list__item"><a class="post-list__link" href="{{ p.permalink }}">{{ p.title }}</a> <span class="post-list__meta">» <time class="post-list__date" datetime="{{ p.date }}">{{ p.date | date(format="%d %b %Y", timezone="UTC") }}</time></span></li>
+    {%- for p in pages %}{% if (p.date | date(format="%Y")) == y %}
+    <li class="post-list__item"><a class="post-list__link" href="{{ p.permalink }}">{{ p.title }}</a> <span class="post-list__meta">» <time class="post-list__date" datetime="{{ p.date }}">{{ p.date | date(format="%d %b %Y") }}</time></span></li>
     {%- endif %}{% endfor %}
   </ol>
   {%- else %}

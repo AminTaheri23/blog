@@ -66,6 +66,7 @@
   {%- set here_path = current_path if current_path is defined else "" %}
   {%- if here_path == "" or (here_path | split(pat=".html") | length) > 1 %}
   {%- set css_base = config.base_url ~ "/css/" %}
+  {%- set css_local = true %}
   {%- else %}
   {%- set css_base = ["../" for s in here_path | split(pat="/") if s] | join(sep="") ~ "css/" %}
   {%- endif %}
@@ -73,6 +74,14 @@
   <link rel="stylesheet" href="{{ css_base }}base.css">
   <link rel="stylesheet" href="{{ css_base }}site.css">
   <link rel="stylesheet" href="{{ css_base }}blog.css">
+  {%- if css_local is defined %}
+  {#- The 404 page only: the same four sheets by path from the site root folder, so the page is styled when opened from the built
+      folder (local checks, the Hallmark linter); served at a deeper URL they miss quietly and the absolute ones above apply. #}
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/site.css">
+  <link rel="stylesheet" href="css/blog.css">
+  {%- endif %}
   {% block head_extra %}{% endblock head_extra %}
 </head>
 <body>
