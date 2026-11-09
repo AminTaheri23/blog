@@ -17,7 +17,7 @@ legacy_guid = "https://amintaheri23.github.io/blog/blog/blindtyping/idea/2025/12
 
 ## Introduction
 
-I’ve been thinking about how much creative energy gets lost to grammar checks, formatting decisions, and the constant temptation to revise while writing. The idea forming in my mind is simple: remove the ability to see what you type until the very end. Let your thoughts move freely. Let the AI handle the cleanup later. This concept could become a focused product — a blind-typing editor designed to reduce friction and make creating easier.
+I’ve been thinking about how much creative energy gets lost to grammar checks, formatting decisions, and the constant temptation to revise while writing. The idea forming in my mind is simple: remove the ability to see what you type until the very end. Let your thoughts move freely. Let the AI handle the cleanup later. This concept could become a focused product: a blind-typing editor designed to reduce friction and make creating easier.
 
 ## The Concept
 
@@ -35,7 +35,7 @@ The goal is to reduce the mental friction of creating and sharing. The tool shou
 
 ## Future Direction
 
-The first step would be building an online text editor that hides the user’s input until submission. From there, users can specify what type of output they want — a blog post, a concept note, or something else. After the AI converts the raw stream into a refined piece, the user can highlight areas that need correction. Then they publish.
+The first step would be building an online text editor that hides the user’s input until submission. From there, users can specify what type of output they want: a blog post, a concept note, or something else. After the AI converts the raw stream into a refined piece, the user can highlight areas that need correction. Then they publish.
 
 ## Conclusion
 
@@ -56,7 +56,7 @@ This blind-typing editor is meant to create a space where writing feels natural 
 | **3. Personal Passion** | **4** | Your write-up is evocative ("let your thoughts move freely," "writing feels natural again"). You clearly feel this pain point personally. It feels like a tool you want to use yourself immediately. |
 | **4. Novelty / Edge** | **3** | Concepts like *The Most Dangerous Writing App* (deletes text if you stop) or *Flowstate* exist. However, adding the **AI-refinement layer** is the unique twist. The promise isn't just "keep typing," it is "type trash, receive treasure." That is a distinct value prop. |
 | **5. Resource Efficiency** | **5** | **Very High.** This is highly boot-strappable. Hosting is negligible; API costs are usage-based and cheap for text. You don't need investors to find out if this works. |
-| **6. Strategic Fit** | **4** | Assuming you are a creator, developer, or writer, this fits perfectly. It builds your portfolio in the "AI Productivity" space—a massive growth sector. |
+| **6. Strategic Fit** | **4** | Assuming you are a creator, developer, or writer, this fits perfectly. It builds your portfolio in the "AI Productivity" space, a massive growth sector. |
 
 ---
 
@@ -71,7 +71,7 @@ This blind-typing editor is meant to create a space where writing feels natural 
 
 **1. The "Trust" Hurdle (The Risk)**
 The biggest drag on your score is **Demand/Relevance (3)**. Writers are control freaks. The fear that the AI will "hallucinate" or change the *meaning* of their raw thoughts is a real barrier.
-* **Fix:** The product needs a "Diff View" feature immediately—showing the user their raw text side-by-side with the AI polished version so they can trust nothing was lost.
+* **Fix:** The product needs a "Diff View" feature immediately, showing the user their raw text side-by-side with the AI polished version so they can trust nothing was lost.
 
 **2. The MVP is essentially free**
 Because you scored a **5** on Feasibility and Efficiency, the "cost" of being wrong is incredibly low. If you build this and nobody likes it, you lost one weekend. This makes it a perfect candidate for a "bias toward action."

@@ -16,7 +16,7 @@ legacy_guid = "https://amintaheri23.github.io/blog/blog/blindtyping/2025/12/07/t
 +++
 
 ### Introduction
-I was recently reflecting on my own knowledge gaps and realized that I am unfamiliar with the inner workings of many standard university faculties. While I understand my own niche, I know very little about what is actually taught in different departments—for example, the specific curriculum within the Faculty of Business or the foundational concepts within the Faculty of Arts. As someone who aspires to be a generalist, I realized this is a blind spot I want to address.
+I was recently reflecting on my own knowledge gaps and realized that I am unfamiliar with the inner workings of many standard university faculties. While I understand my own niche, I know very little about what is actually taught in different departments (for example, the specific curriculum within the Faculty of Business or the foundational concepts within the Faculty of Arts). As someone who aspires to be a generalist, I realized this is a blind spot I want to address.
 
 ### The Big-to-Small Approach
 To solve this, I have been thinking about a new model of self-education. I call it a "top-down" model, or a "big-to-small" picture of learning.
@@ -34,11 +34,11 @@ Once I have that high-level overview, the model involves going deeper, level by 
 If you were to visualize this, it would look like a hexagonal graph representing, for example, six different faculties. My goal is to achieve an "average" level of knowledge across the entire graph, filling in the areas where I currently have no understanding.
 
 ### Conclusion
-Ultimately, this top-down concept is a way to teach myself the things I don't know, but that a well-rounded person *should* know. The goal isn't to become a specialist in everything, but to gain enough context to appreciate the work that has been done—and is currently being done—in fields outside my own.
+Ultimately, this top-down concept is a way to teach myself the things I don't know, but that a well-rounded person *should* know. The goal isn't to become a specialist in everything, but to gain enough context to appreciate the work that has been done (and is currently being done) in fields outside my own.
 
 ---
 
 ### Key Takeaways
 
 1.  **Apply the 80/20 Rule to General Knowledge:** You don't need to know everything about a subject to be a generalist; focusing on the core 20% of concepts that drive the discipline is often enough to gain a functional understanding.
-2.  **Use a Hierarchical Structure:** Learning is more manageable when structured from the top down—starting with the broad faculty, moving to departments, and finally narrowing down to specific research interests.
+2.  **Use a Hierarchical Structure:** Learning is more manageable when structured from the top down, starting with the broad faculty, moving to departments, and finally narrowing down to specific research interests.

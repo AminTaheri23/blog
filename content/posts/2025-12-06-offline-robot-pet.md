@@ -15,17 +15,17 @@ legacy_url = "https://amintaheri23.github.io/blog/blindtyping/idea/2025/12/07/of
 legacy_guid = "https://amintaheri23.github.io/blog/blog/blindtyping/idea/2025/12/07/offline-robot-pet.html"
 +++
 
-Imagine having a small robotic companion that lives in your home—one that can see, listen, follow you around, and learn from your daily interactions. Now imagine that this companion doesn't send your private moments to the cloud, doesn't require subscription fees, and gets smarter every night while you sleep. This is the concept I've been developing: a fully offline, self-learning robot pet that puts privacy and independence first.
+Imagine having a small robotic companion that lives in your home, one that can see, listen, follow you around, and learn from your daily interactions. Now imagine that this companion doesn't send your private moments to the cloud, doesn't require subscription fees, and gets smarter every night while you sleep. This is the concept I've been developing: a fully offline, self-learning robot pet that puts privacy and independence first.
 
 ## The Core Concept
 
 The vision centers around a small RC-sized robot powered by modern AI, but with a crucial difference from commercial smart home devices: everything runs locally. The robot would use a vision-language model (VLM) for understanding its surroundings and conversing with you, while a separate model handles motor control and physical actions. Think of it as a battery-powered companion that can navigate your space, recognize you, and respond to your needs.
 
-The brain of this system would run on a home server or your existing PC or laptop—no cloud required. During the day, it operates as your companion. At night, while everyone sleeps, it uses RLHF (Reinforcement Learning from Human Feedback) combined with QLora for efficient fine-tuning, continuously improving its behavior based on your interactions.
+The brain of this system would run on a home server or your existing PC or laptop (no cloud required). During the day, it operates as your companion. At night, while everyone sleeps, it uses RLHF (Reinforcement Learning from Human Feedback) combined with QLora for efficient fine-tuning, continuously improving its behavior based on your interactions.
 
 ## Privacy as a Foundation
 
-In an era where smart home devices constantly listen and stream data to corporate servers, this concept takes a different approach. Because the robot sees inside your home and listens to your conversations, total offline computation isn't just a feature—it's essential. You maintain complete control over what the robot learns and what data exists.
+In an era where smart home devices constantly listen and stream data to corporate servers, this concept takes a different approach. Because the robot sees inside your home and listens to your conversations, total offline computation isn't just a feature; it's essential. You maintain complete control over what the robot learns and what data exists.
 
 When internet access is needed, the robot would connect through your PC or laptop, allowing you to monitor exactly what information it requests online. There's transparency at every step, and your private moments stay private.
 
@@ -43,17 +43,17 @@ Core capabilities would include:
 - Conversing naturally about topics both mundane and complex
 - Learning your routines and preferences over time
 
-The physical actions and tasks it could perform around the house are still an open question—one that would likely evolve based on what users actually need and what's practically achievable with RC-scale hardware.
+The physical actions and tasks it could perform around the house are still an open question, one that would likely evolve based on what users actually need and what's practically achievable with RC-scale hardware.
 
 ## The DIY Appeal
 
-What makes this concept compelling is accessibility. If you purchase the hardware components for an RC platform, add cameras and basic sensors, and leverage your existing computer for processing, you could build this companion without ongoing costs. No subscriptions, no cloud services, no corporate middleware—just you, your hardware, and open-source AI models running on your terms.
+What makes this concept compelling is accessibility. If you purchase the hardware components for an RC platform, add cameras and basic sensors, and leverage your existing computer for processing, you could build this companion without ongoing costs. No subscriptions, no cloud services, no corporate middleware: just you, your hardware, and open-source AI models running on your terms.
 
-It's essentially a walking, offline Google Home with vision and personality—but one that belongs entirely to you.
+It's essentially a walking, offline Google Home with vision and personality, but one that belongs entirely to you.
 
 ## Conclusion
 
-This vision represents a shift from cloud-dependent smart home devices toward truly personal robotics. While many technical challenges remain—from efficient local AI processing to determining practical household actions—the core idea addresses something important: the desire for intelligent home companions that respect our privacy and operate on our terms.
+This vision represents a shift from cloud-dependent smart home devices toward truly personal robotics. While many technical challenges remain (from efficient local AI processing to determining practical household actions), the core idea addresses something important: the desire for intelligent home companions that respect our privacy and operate on our terms.
 
 The concept is still evolving, particularly around what physical tasks such a robot could meaningfully perform. But the foundation is clear: combine accessible RC hardware, local AI processing, continuous learning, and absolute privacy to create something that's both intelligent and truly yours.
 

@@ -9,7 +9,7 @@ tags = ["blindtyping", "philosophy"]
 
 ## Introduction
 
-Learning often begins in discomfort. Many of the lessons that shape us arise from moments of uncertainty, failure, or emotional weight. Pain functions as a universal language—one that crosses borders, cultures, and backgrounds. How a person responds to that pain can influence not only their own development but also the experiences of others.
+Learning often begins in discomfort. Many of the lessons that shape us arise from moments of uncertainty, failure, or emotional weight. Pain functions as a universal language, one that crosses borders, cultures, and backgrounds. How a person responds to that pain can influence not only their own development but also the experiences of others.
 
 This reflection explores the connection between hardship and learning, and the quiet, skillful work involved in transforming difficult experiences into meaningful growth.
 
@@ -17,7 +17,7 @@ This reflection explores the connection between hardship and learning, and the q
 
 Pain divides people in subtle ways. Some encounter hardship and choose not to pass it forward. Instead, they use their understanding to spare others unnecessary struggle. Others, intentionally or not, allow cycles of difficulty to continue. This distinction matters in many areas of life, but it becomes especially important in any environment where learning is central.
 
-At its core, teaching—formal or informal—is the act of breaking down overwhelming experiences into smaller, navigable steps. When a topic feels heavy or inaccessible, the person guiding the learning process can reshape it into manageable, structured pieces. The goal is a balance: challenge without intimidation, progress without stagnation.
+At its core, teaching (formal or informal) is the act of breaking down overwhelming experiences into smaller, navigable steps. When a topic feels heavy or inaccessible, the person guiding the learning process can reshape it into manageable, structured pieces. The goal is a balance: challenge without intimidation, progress without stagnation.
 
 This work is both practical and artistic. It involves recognizing which parts of a concept cause hesitation or confusion, then restructuring them into a sequence that students or learners can digest. Done well, it prevents people from being overwhelmed by complexity while avoiding the opposite trap of oversimplification.
 
@@ -30,4 +30,4 @@ Feedback, repetition, hands-on engagement, and even elements of friendly competi
 
 ## Conclusion
 
-Pain shapes understanding, but it does not have to define the learning experience. When difficulty is approached with intention and structured guidance, it becomes an opportunity rather than a burden. The craft of learning—and helping others learn—lies in this transformation: turning discomfort into clarity, and complexity into progress.
+Pain shapes understanding, but it does not have to define the learning experience. When difficulty is approached with intention and structured guidance, it becomes an opportunity rather than a burden. The craft of learning (and helping others learn) lies in this transformation: turning discomfort into clarity, and complexity into progress.
