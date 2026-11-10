@@ -15,6 +15,7 @@ Icons: [Font Awesome Free 6](https://fontawesome.com) ([CC BY 4.0](https://fonta
 - Search over post titles and text (Zola search index, small vanilla JS, keyboard accessible)
 - Related posts and older/newer links
 - Disqus comments, loaded when you scroll to them
+- Link previews for Telegram and other apps: Open Graph and Twitter tags, the post's opening text as its description, and a share card per post drawn at build time (`scripts/og-cards.mjs`)
 - Google Analytics
 - Old Jekyll URLs keep working as redirect pages
 
@@ -40,6 +41,7 @@ Icons: [Font Awesome Free 6](https://fontawesome.com) ([CC BY 4.0](https://fonta
 │   ├── static/img/posts/     # Post images, served at /blog/static/img/posts/
 │   ├── category/*.html       # Redirects from the old /category/<name>.html URLs
 │   └── projects/index.html   # Redirect to the main site's projects
+├── scripts/og-cards.mjs      # Draws the link-preview cards into public/og/ after zola build (CI runs it)
 ├── design.md                 # The locked design system
 └── .github/workflows/zola.yml  # CI: validate, build, assert outputs, deploy to GitHub Pages
 ```

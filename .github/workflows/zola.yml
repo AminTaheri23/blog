@@ -55,6 +55,9 @@ jobs:
               cats = (fm.get('taxonomies') or {}).get('category') or []
               if not cats:
                   errors.append((path, 'needs at least one [taxonomies] category'))
+              image = (fm.get('extra') or {}).get('image')
+              if image and not os.path.isfile(os.path.join('static/static/img/posts', image)):
+                  errors.append((path, f'[extra] image {image} is missing from static/static/img/posts/ (it is the link-preview image)'))
               print(f"OK   {path}" if not any(e[0] == path for e in errors) else f"FAIL {path}")
 
           for path in sorted(glob.glob('content/**/*.md', recursive=True)):
@@ -97,6 +100,15 @@ jobs:
             exit 1
           fi
 
+      - name: Draw link-preview cards
+        # The Open Graph images the pages point at (og/<slug>.png, og/default.png), drawn in the
+        # runner's Chrome; the script fails if a page points at a card that is not there.
+        env:
+          OG_PUPPETEER: ${{ runner.temp }}/og-cards
+        run: |
+          npm install --prefix "$OG_PUPPETEER" --no-audit --no-fund --no-save puppeteer-core@24.43.1
+          node scripts/og-cards.mjs public
+
       - name: Assert output
         run: |
           out=public
@@ -106,6 +118,7 @@ jobs:
             css/site.css css/blog.css js/site.js \
             about/index.html projects/index.html category/index.html \
             static/img/favicon.ico \
+            og/default.png og/hello-world.png og/fixing-garmin-heart-rate-accuracy.png \
             static/img/posts/garmin-hair-tie-extender.jpeg \
             static/img/posts/garmin-instinct-2s-wrist.jpeg \
             others/2024/10/21/hello-world.html \

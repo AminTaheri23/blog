@@ -29,9 +29,15 @@ Settings → Pages → Source must stay on **GitHub Actions**.
   tags = ["tag1", "tag2"]
   +++
   ```
-  Optional, under `[extra]`: `image = "file.jpeg"` (og:image, file in
-  `static/static/img/posts/`). Zola rejects unknown top-level keys, so anything custom
-  goes under `[extra]`.
+  Zola rejects unknown top-level keys, so anything custom goes under `[extra]`.
+- **Link previews** (Telegram, WhatsApp, X, LinkedIn, Slack) need nothing per post: the
+  preview text is the post's opening text, and the image is a share card with its title,
+  date and categories, drawn at build time by `scripts/og-cards.mjs` (CI runs it after
+  `zola build`; other pages share `og/default.png`). Optional overrides:
+  `description = "..."` (top level, next to `title`) for the preview text, and under
+  `[extra]` `image = "file.jpeg"` (a file in `static/static/img/posts/`, ideally
+  1200×630) to show a photo instead of the card. Telegram caches previews: after a
+  change, send the link to @WebpageBot to refresh it.
 - Post date/time: use the actual local time at time of writing, `-02:30` (Newfoundland).
 - **Categories need no extra file.** Any name in `category = [...]` gets its page at
   `/blog/category/<name>/` automatically, and `/blog/category/` lists them all.
@@ -69,6 +75,10 @@ Settings → Pages → Source must stay on **GitHub Actions**.
 
 - Install Zola 0.23.6 (release binary), then `zola serve` (http://127.0.0.1:1111/blog/)
   or `zola build` (output in `public/`, git-ignored). The build must show 0 warnings.
+- To see the share cards locally (CI draws them on every build):
+  `npm install --prefix /tmp/og --no-save puppeteer-core@24.43.1`, then
+  `OG_PUPPETEER=/tmp/og node scripts/og-cards.mjs public` (Chrome via `CHROME_PATH` if it is
+  not in the usual place); the PNGs land in `public/og/`.
 - Templates use Tera 2 (Zola 0.23): components (`{% component %}`), not macros.
 
 ## Design
