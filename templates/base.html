@@ -19,7 +19,8 @@
   <meta name="author" content="{{ config.extra.author }}">
   {#- Link previews (Telegram, WhatsApp, X, LinkedIn, Slack...): one title, description and image per page.
       Description: a post's `description` from its front matter, else its opening text (headings, code, tables,
-      captions and footnotes left out) cut at a word near 200 characters; the site description elsewhere.
+      footnotes and captions, including a paragraph that is one italic line, left out) cut at a word near
+      200 characters; the site description elsewhere.
       Image: a post's [extra] image, else its card og/<slug>.png; every other page shares og/default.png.
       scripts/og-cards.mjs draws the cards after `zola build` (the CI build job runs it). #}
   {%- set is_post = is_page and "/posts/" in page.path %}
@@ -34,7 +35,7 @@
   {%- set share_desc = page.description | escape %}
   {%- elif is_page %}
   {%- set share_body = page.content
-        | regex_replace(pattern="(?s)<!--.*?-->|<pre[ >].*?</pre>|<table[ >].*?</table>|<sup[ >].*?</sup>|<figcaption[ >].*?</figcaption>|<footer[ >].*?</footer>", rep=" ") %}
+        | regex_replace(pattern="(?s)<!--.*?-->|<pre[ >].*?</pre>|<table[ >].*?</table>|<sup[ >].*?</sup>|<figcaption[ >].*?</figcaption>|<footer[ >].*?</footer>|<p[^>]*>\\s*<em>[^<]*</em>\\s*</p>", rep=" ") %}
   {%- set share_desc = share_body | regex_replace(pattern="(?s)<h[1-6][ >].*?</h[1-6]>", rep=" ")
         | striptags | replace(from='"', to="&quot;") | regex_replace(pattern="\\s+", rep=" ") | trim %}
   {%- if not share_desc %}
@@ -42,7 +43,8 @@
   {%- set share_desc = share_body | striptags | replace(from='"', to="&quot;") | regex_replace(pattern="\\s+", rep=" ") | trim %}
   {%- endif %}
   {%- if share_desc | length > 200 %}
-  {%- set share_desc = share_desc | regex_replace(pattern="(?s)^(.{0,190}\\S*)\\s.*$", rep="${1}…") %}
+  {%- set share_desc = share_desc | regex_replace(pattern="(?s)^(.{0,190}\\S*)\\s.*$", rep="${1}…")
+        | regex_replace(pattern="([.!?])…$", rep="${1}") | regex_replace(pattern="[,;:]…$", rep="…") %}
   {%- endif %}
   {%- endif %}
   {%- if not share_desc %}
