@@ -183,9 +183,11 @@ main { display: block; padding-bottom: var(--space-2xl); }
 .comments > * + * { margin-top: var(--space-md); }
 .comments noscript p, .comments > p { color: var(--color-muted); }
 /* The thread stays in the layout while empty: Disqus waits for it to scroll into view before it inserts the iframe, and a hidden box never does.
-   Its text and link colours are sRGB so Disqus picks its dark theme. */
-#disqus_thread { color: var(--color-ink-srgb); }
+   Its background, text and link colours are sRGB: Disqus parses all three to pick its dark theme and stops on oklch(). */
+#disqus_thread { background-color: var(--color-paper-srgb); color: var(--color-ink-srgb); }
 #disqus_thread a { color: var(--color-accent-srgb); }
+/* Chromium never matches :focus or :focus-within on a cross-origin iframe, so site.js sets .is-focused while focus is inside Disqus. */
+#disqus_thread.is-focused iframe { outline: 2px solid var(--color-focus); outline-offset: 2px; }
 
 /* ---------- The rail at desktop widths ---------- */
 @media (min-width: 64rem) {
