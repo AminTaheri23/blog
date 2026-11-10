@@ -45,6 +45,9 @@ Orange is the current state (the pressed chip, the current nav link, the open me
 - Every picture is framed (`.frame`, or `.prose img` with the same recipe) on `--color-paper-3` and shows in true colour; Rim's `sat=-20 con=10` photo treatment is not applied, at the owner's request.
 - Code blocks sit on `--color-paper-3` with a 1px rule edge and scroll sideways inside their own box; tables are blocks that scroll inside their own box, their cells wrap first. A box that scrolls takes keyboard focus (`site.js`).
 
+## Share cards
+- Link previews (`og/<slug>.png` per post, `og/default.png` for the rest), 1200×630, drawn by `scripts/og-cards.mjs` from `tokens.css` in Switzer: `--color-paper` ground; the author's name and the blog title over a `--color-rule` hairline; a 64×6 `--color-accent` mark over the title in the display face (500, `--tracking-display`, 92px stepping down to fit, balanced lines); the date » categories and the site address under a hairline. The default card sets the blog title over its description instead.
+
 ## Reading layout
 - Desktop (64rem and up): a rail of a quarter of the container on the left holds the post's date and categories (and the years on category pages); the title, the prose, related posts, the pager and comments sit in the column to its right, where the old site's content column was.
 - Heads in a post step down the scale (h1 `--text-3xl`, h2 `--text-2xl`, h3 `--text-xl`, h4 `--text-lg`) with twice the space above as below.
