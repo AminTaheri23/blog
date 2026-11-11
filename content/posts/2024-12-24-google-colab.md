@@ -14,7 +14,7 @@ legacy_url = "https://amintaheri23.github.io/blog/ai/python/cloud/linux/2024/12/
 legacy_guid = "https://amintaheri23.github.io/blog/blog/ai/python/cloud/linux/2024/12/24/google-colab.html"
 +++
 ### **Introduction**
-![Google Colab](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Google_Colaboratory_SVG_Logo.svg/1200px-Google_Colaboratory_SVG_Logo.svg.png)
+![Google Colab](/blog/static/img/posts/google-colab-logo.svg)
 <p align="center">
     <em>Figure 1: Google Colab Logo from Wikipedia</em>
 </p>
