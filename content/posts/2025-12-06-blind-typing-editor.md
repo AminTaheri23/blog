@@ -46,7 +46,7 @@ This blind-typing editor is meant to create a space where writing feels natural 
 * Blind typing allows ideas to flow without real-time self-editing.
 * AI refinement removes friction and helps users publish polished work quickly.
 
-
+<!--
 ## The Audit: Blind-Typing AI Editor
 
 | Category | Score | Reasoning |
@@ -83,3 +83,4 @@ You mentioned: *"highlight anything unclear, and request adjustments."* This is 
 
 1.  **Don't over-engineer the editor.** A simple HTML page with a textarea that turns the font color to white (invisible) is enough to test the psychology of it.
 2.  **Focus on the prompt engineering.** The success of this tool relies entirely on how well the AI interprets "messy stream of consciousness." If the output is generic AI slop, users will leave. The prompt needs to say: *"Retain the user's specific tone and unique arguments, but fix grammar and flow."*
+-->
