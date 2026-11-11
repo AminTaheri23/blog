@@ -58,7 +58,7 @@ The existence of Molmo also highlights something encouraging about the current A
 - [Molmo GitHub Repository](https://github.com/allenai/molmo)
 - [Technical Documentation](https://molmoai.com/)
 
-
+<!-- 
 # 6-Point Idea Audit: VLM Spatial Reasoning Blog Post
 
 ## Evaluation Summary
@@ -128,4 +128,4 @@ This blog post idea demonstrates strong relevance and passion but requires consi
 | Strategic Fit | 0 |
 | **TOTAL** | **22/30** |
 
-**Status**: Incubate. Publish if it aligns with your strategic goals; otherwise, archive as a portfolio piece.
+**Status**: Incubate. Publish if it aligns with your strategic goals; otherwise, archive as a portfolio piece. -->

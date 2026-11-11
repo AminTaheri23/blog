@@ -53,7 +53,7 @@ As the field continues to explore more efficient training paradigms, perhaps loo
 
 - **Biological inspiration**: Human brain development combines three elements (abundant initial connections, progressive pruning, and curriculum-based learning with increasing difficulty) that could inform more efficient LLM training strategies
 - **Unexplored synthesis**: While progressive layer growth and curriculum learning exist as separate research directions, combining them with active pruning during training represents a promising but underexplored approach that more closely mirrors biological learning
-
+<!-- 
 # 6-Point Idea Audit: Curriculum Learning with Dynamic Architecture for LLMs
 
 | Category | Score | Justification |
@@ -99,4 +99,4 @@ As the field continues to explore more efficient training paradigms, perhaps loo
 - Pivot to more feasible ML efficiency ideas you can prototype quickly
 
 **Lower-Resource Alternative:**
-- Could you test a simplified version on smaller models (e.g., train a small transformer from scratch with curriculum learning on limited data)? This would improve feasibility score to 3-4 and resource efficiency to 3-4, potentially pushing total score to incubation range.
+- Could you test a simplified version on smaller models (e.g., train a small transformer from scratch with curriculum learning on limited data)? This would improve feasibility score to 3-4 and resource efficiency to 3-4, potentially pushing total score to incubation range. -->

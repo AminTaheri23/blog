@@ -68,7 +68,7 @@ The concept is still evolving, particularly around what physical tasks such a ro
 ---
 ---
 
-
+<!-- 
 # 6-Point Idea Audit: Offline AI Robot Pet Concept
 
 ## Scoring Summary
@@ -127,4 +127,4 @@ Needs refinement before pursuing. Not ready for immediate execution, but has mer
 2. Would 100 people pay $500-1000 for the hardware kit?
 3. What is the ONE killer use case that justifies this over existing solutions?
 4. Do you have 10-20 hours/week for the next year?
-5. What does success look like in 12 months?
+5. What does success look like in 12 months? -->
